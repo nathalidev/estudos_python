@@ -30,7 +30,7 @@ for i in range(3):
         lista_convertida.append(int(n)) #adiciono os convertidos a lista nova
     matriz.append(lista_convertida) #a matriz pega as 3 listas convertida
     
-soma_primeira_linha = sum(matriz[0]) # faço todas as soma spossiveis para ver se batem e da o quadrado maigco
+soma_primeira_linha = sum(matriz[0]) # faço todas as soma possiveis para ver se batem e da o quadrado maigco
 soma_segunda_linha = sum(matriz[1])
 soma_vertical_esquerda = matriz[0][0] + matriz[1][0] + matriz[2][0]
 soma_ultima_linha = sum(matriz[2])
