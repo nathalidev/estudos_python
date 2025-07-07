@@ -1,0 +1,16 @@
+[
+    {
+        "Titulo do livro": "Jogos Vorazes",
+        "Autor": "Suzanne Collins",
+        "Ano de lançamento": 2008,
+        "Gênero do livro": "Ficção",
+        "Já foi lido?": false
+    },
+    {
+        "Titulo do livro": "O diário de Anne Frank",
+        "Autor": "Anne Frank",
+        "Ano de lançamento": 1945,
+        "Gênero do livro": "Biografia",
+        "Já foi lido?": false
+    }
+]
