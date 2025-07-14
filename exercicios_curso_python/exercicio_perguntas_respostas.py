@@ -1,5 +1,5 @@
 # Exercício - sistema de perguntas e respostas
-
+import time
 
 perguntas = [
     {
@@ -20,18 +20,27 @@ perguntas = [
 ]
 
 for dicionario in perguntas:
-    for chave, valor in dicionario.items():
-        if chave == "Pergunta":
-            print(chave, ":", valor)
-        if chave == "Opções":
-            print(chave,":")
-            contador = 1
-            for opcao in valor:
-                print(f"{contador})", f"{opcao}")
-                contador += 1
+    while True:
+        print("Pergunta :", dicionario['Pergunta'])
+        print("Opções:\n")
+        for i, opcoes in enumerate(dicionario['Opções'], start=1):
+            print(f"{i}) {opcoes}")
+        try:
             opcao_usuario = int(input("Escolha uma opção: "))
             resposta_certa = dicionario["Resposta"]
-            if (opcao_usuario -1) == valor.index(resposta_certa):
+            if  opcao_usuario < 1 or opcao_usuario > len(dicionario["Opções"]):
+                print("Opção inválida")
+                time.sleep(2)
+                
+            elif dicionario['Opções'][opcao_usuario-1] == resposta_certa:
                 print("Parabéns, você acertou!\n")
+                time.sleep(2)
+                break
+            
             else:
-                print("Resposta errada...\n")
+                print("Resposta incorreta\n")
+                time.sleep(2)
+                
+        except Exception as e:
+            print("Opção inválida\n")
+            time.sleep(2)
