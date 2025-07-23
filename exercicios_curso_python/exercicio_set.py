@@ -31,10 +31,11 @@ def encontra_duplicado(lista_de_listas_de_inteiros):
     contador_de_lista = 0
     while encontrado == False:
         for lista in lista_de_listas_de_inteiros:
+            lista_em_set = set(lista)
             contador_de_lista += 1
             for termo_da_lista in lista:
                 vezes_que_o_termo_aparece = lista.count(termo_da_lista)
-                if vezes_que_o_termo_aparece > 1:
+                if termo_da_lista not in lista_em_set > 1:
                     encontrado = True
                     print(f"o primeiro termo repetido da {contador_de_lista}° lista é {termo_da_lista}")
                     break
