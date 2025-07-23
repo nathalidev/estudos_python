@@ -27,17 +27,19 @@ lista_de_listas_de_inteiros = [
 ]
 
 def encontra_duplicado(lista_de_listas_de_inteiros):
-    encontrado = False
     contador_de_lista = 0
-    while encontrado == False:
-        for lista in lista_de_listas_de_inteiros:
-            lista_em_set = set(lista)
-            contador_de_lista += 1
-            for termo_da_lista in lista:
-                vezes_que_o_termo_aparece = lista.count(termo_da_lista)
-                if termo_da_lista not in lista_em_set > 1:
-                    encontrado = True
-                    print(f"o primeiro termo repetido da {contador_de_lista}° lista é {termo_da_lista}")
-                    break
+    resultados = []
+    for lista in lista_de_listas_de_inteiros:
+        vistos = set()
+        contador_de_lista += 1
+        for termo_da_lista in lista:
+            if termo_da_lista in vistos:
+                resultados.append(f"o primeiro termo repetido da {contador_de_lista}° lista é {termo_da_lista}")
+                break
+            vistos.add(termo_da_lista)
+        else:
+            resultados.append(f"a {contador_de_lista}° lista não tem termo repetido.")
+    return resultados
 
-print(encontra_duplicado(lista_de_listas_de_inteiros))
+for resultado in encontra_duplicado(lista_de_listas_de_inteiros):
+    print(resultado)
