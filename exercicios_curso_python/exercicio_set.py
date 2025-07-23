@@ -26,9 +26,17 @@ lista_de_listas_de_inteiros = [
     [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
 ]
 
-# for lista in lista_de_listas_de_inteiros: #vou iterar por cada lista dentro das listas
-#     lista_transformada_em_set = set(lista)
-#     if lista_transformada_em_set == lista:
-#         print(-1)
-#     else:
-        
+def encontra_duplicado(lista_de_listas_de_inteiros):
+    encontrado = False
+    contador_de_lista = 0
+    while encontrado == False:
+        for lista in lista_de_listas_de_inteiros:
+            contador_de_lista += 1
+            for termo_da_lista in lista:
+                vezes_que_o_termo_aparece = lista.count(termo_da_lista)
+                if vezes_que_o_termo_aparece > 1:
+                    encontrado = True
+                    print(f"o primeiro termo repetido da {contador_de_lista}° lista é {termo_da_lista}")
+                    break
+
+print(encontra_duplicado(lista_de_listas_de_inteiros))
