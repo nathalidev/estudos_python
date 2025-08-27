@@ -2,6 +2,14 @@
 # List comprehension é uma forma rápida para criar listas
 # a partir de iteráveis.
 # print(list(range(10)))
+import pprint
+
+
+def p(v):
+    pprint.pprint(f"{v}", sort_dicts=False, width=40)
+    print("\n")
+
+
 lista = []
 for numero in range(10):
     lista.append(numero)
@@ -20,17 +28,20 @@ produtos = [
     {'nome': 'p2', 'preco': 10, },
     {'nome': 'p3', 'preco': 30, },
 ]
-
 novos_produtos = [
     {**produto, 'preco': produto['preco'] * 1.05}
     if produto['preco'] > 20 else {**produto}
     for produto in produtos
 ]
-""" se o preço daquele produto for maior que 20 desempacoto aquele produto multiplicando o preço dele por 1,05 se não eu só desempacoto o produto em si e crio a lista é isso? """
 
-print(novos_produtos)
-for produto in novos_produtos:
-    print(" | ".join(f"{chave}:{valor}" for chave , valor in produto.items()))
-# print(*novos_produtos, sep='\n')
 
-#e se eu quisesse desempacotar os dicionários dentro de produtos?
+p(novos_produtos)
+# p(novos_produtos)
+# lista = [n for n in range(10) if n < 5]
+novos_produtos = [
+    {**produto, 'preco': produto['preco'] * 1.05}
+    if produto['preco'] > 20 else {**produto}
+    for produto in produtos
+    if (produto['preco'] >= 20 and produto['preco'] * 1.05) > 10
+]
+p(novos_produtos)
