@@ -14,7 +14,7 @@ sleep(2)
 
 titulo_do_sistema = "="*6+"Biblioteca Virtual"+"="*6
 print("\n"+titulo_do_sistema.center(150)+"\n") #titulo centralizado com o center(), \n buga tudo se estiver dentro da variavel do titulo
-print("="*166)
+print("="*164)
 sleep(2)
 
 while True:
@@ -58,11 +58,11 @@ while True:
 
         
         if opcao_selecionada == 2:
-            print("\n"+"-"*166)
+            print("\n"+"-"*164)
             for livro in lista_livros:
                 for chave, valor in livro.items():
                     print(f"{chave} : {valor}")
-                print("-"*166+"\n")
+                print("-"*164+"\n")
                 # print("\n")
             sleep(2)
             
@@ -71,7 +71,7 @@ while True:
             encontrado = False
             for livro in lista_livros:
                 if livro["Titulo do livro"].lower() == titulo_do_livro_na_busca.lower():
-                    print("="*166)
+                    print("="*164)
                     print(livro)
                     encontrado = True
                     break
