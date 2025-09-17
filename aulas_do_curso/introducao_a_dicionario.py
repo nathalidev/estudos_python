@@ -14,14 +14,14 @@ print(pessoa[chave])
 
 pessoa[chave] = 'Maria'
 
-del pessoa['sobrenome']
+# del pessoa['sobrenome']
 print(pessoa)
-print(pessoa['nome'])
+# print(pessoa['nome'])
 
-# print(pessoa.get('sobrenome'))
-if pessoa.get('sobrenome') is None:
-    print('NÃO EXISTE')
-else:
-    print(pessoa['sobrenome'])
+# # print(pessoa.get('sobrenome'))
+# if pessoa.get('sobrenome') is None:
+#     print('NÃO EXISTE')
+# else:
+#     print(pessoa['sobrenome'])
 
-# print('ISSO Não vai')
+# # print('ISSO Não vai')
