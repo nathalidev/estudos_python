@@ -14,7 +14,7 @@ sleep(2)
 
 titulo_do_sistema = "="*6+"Biblioteca Virtual"+"="*6
 print("\n"+titulo_do_sistema.center(150)+"\n") #titulo centralizado com o center(), \n buga tudo se estiver dentro da variavel do titulo
-print("="*164)
+
 sleep(2)
 
 while True:
@@ -24,37 +24,42 @@ while True:
         if opcao_selecionada == 1: 
             
             titulo_do_livro = input("\nQual o título do livro que você deseja adicionar: ")
+
             autor = input("\nQual o autor do livro que deseja adicionar: ")
             
-            ano_do_livro = int(input("\nQual o ano de lançamento do livro: "))
+            while True:
+                ano_do_livro = int(input("\nQual o ano de lançamento do livro: "))
+                if type(ano_do_livro) != int:
+                    print("O ano de lançamento do livro precisa ser um número inteiro")
+                    continue
             
-            genero_do_livro = input("\nQual o gênero do livro que deseja adicionar: ")
+                genero_do_livro = input("\nQual o gênero do livro que deseja adicionar: ")
+
+                while True:
+                    status_do_livro = input("\nO livro que está adicionando ja foi lido? [S/N] ").upper()
+                    
+                    if status_do_livro == "S" or status_do_livro == "SIM":
+                        status_do_livro = True
+                        
+                    elif status_do_livro == "N" or status_do_livro == "NAO" or status_do_livro == "NÃO":
+                        status_do_livro = False
+                        
+                    else:
+                        print("Opção inválida")
+                        continue #o continue não faz o loop inteiro do programa “seguir em frente”, ele só faz o loop onde ele está ir para a próxima iteração.
+                    if ano_do_livro > ano_atual:
+                        print("O ano de lançamento do livro precisa ser válido")
+                        continue
             
-            status_do_livro = input("\nO livro que está adicionando ja foi lido? [S/N] ").upper()
-            
-            if status_do_livro == "S" or status_do_livro == "SIM":
-                status_do_livro = True
-                
-            elif status_do_livro == "N" or status_do_livro == "NAO" or status_do_livro == "NÃO":
-                status_do_livro = False
-                
-            else:
-                print("Opção inválida")
-                continue
-            
-            if ano_do_livro > ano_atual:
-                print("O ano de lançamento do livro precisa ser válido")
-                continue
-        
-            else:
-                lista_livros.append({"Titulo do livro" : titulo_do_livro,
-                                    "Autor" : autor,
-                                    "Ano de lançamento" : ano_do_livro,
-                                    "Gênero do livro" : genero_do_livro,
-                                    "Já foi lido?" : status_do_livro})
-                
-                with open("livros.json", "w", encoding="utf-8") as f:
-                    json.dump(lista_livros, f, indent=4, ensure_ascii=False)
+                    else:
+                        lista_livros.append({"Titulo do livro" : titulo_do_livro,
+                                            "Autor" : autor,
+                                            "Ano de lançamento" : ano_do_livro,
+                                            "Gênero do livro" : genero_do_livro,
+                                            "Já foi lido?" : status_do_livro})
+                        
+                        with open("livros.json", "w", encoding="utf-8") as f:
+                            json.dump(lista_livros, f, indent=4, ensure_ascii=False)
 
         
         if opcao_selecionada == 2:
@@ -71,7 +76,7 @@ while True:
             encontrado = False
             for livro in lista_livros:
                 if livro["Titulo do livro"].lower() == titulo_do_livro_na_busca.lower():
-                    print("="*164)
+                    
                     print(livro)
                     encontrado = True
                     break
@@ -91,36 +96,42 @@ while True:
                 if livro["Titulo do livro"].lower() == titulo_do_livro_na_busca.lower():
                     
                     encontrado = True
-                    
-                    print("\nQual informação você gostaria de alterar? ")
-                    
-                    informacao_a_alterar = int(input("\n1-Titulo\n2-Autor\n3-Ano de lançamento\n4-Gênero\n5-Status de leitura\nResposta: "))
-                    
-                    if informacao_a_alterar == 1:
-                        novo_titulo = input("\nDefina o novo título do livro: ")
-                        livro["Titulo do livro"] = novo_titulo
+                    while True:
+                        print("\nQual informação você gostaria de alterar? ")
                         
-                    if informacao_a_alterar == 2:
-                        novo_autor = input("\nDefina o novo autor do livro: ")
-                        livro["Autor"] = novo_autor
+                        informacao_a_alterar = int(input("\n1-Titulo\n2-Autor\n3-Ano de lançamento\n4-Gênero\n5-Status de leitura\n0-Sair\nResposta: "))
                         
-                    if informacao_a_alterar == 3:
-                        novo_ano_lancamento = int(input("\nDefina o novo ano de lançamento do livro: "))
-                        livro["Ano de lançamento"] = novo_ano_lancamento
-                        
-                    if informacao_a_alterar == 4:
-                        novo_genero = input("\nDefina o novo gênero do livro: ")
-                        livro["Gênero do livro"] = novo_genero
-                        
-                    if informacao_a_alterar == 5:
-                        
-                        if livro["Já foi lido?"] == True:
-                            livro["Já foi lido?"] = False
+                        if informacao_a_alterar == 1:
+                            novo_titulo = input("\nDefina o novo título do livro: ")
+                            livro["Titulo do livro"] = novo_titulo
                             
-                        else: 
-                            livro["Já foi lido?"] = True
+                        elif informacao_a_alterar == 2:
+                            novo_autor = input("\nDefina o novo autor do livro: ")
+                            livro["Autor"] = novo_autor
+                            
+                        elif informacao_a_alterar == 3:
+                            novo_ano_lancamento = int(input("\nDefina o novo ano de lançamento do livro: "))
+                            livro["Ano de lançamento"] = novo_ano_lancamento
+                            
+                        elif informacao_a_alterar == 4:
+                            novo_genero = input("\nDefina o novo gênero do livro: ")
+                            livro["Gênero do livro"] = novo_genero
+                            
+                        elif informacao_a_alterar == 5:
+                            
+                            if livro["Já foi lido?"] == True:
+                                livro["Já foi lido?"] = False
+                                
+                            else: 
+                                livro["Já foi lido?"] = True
+                        elif informacao_a_alterar == 0:
+                            break
+                        else:
+                            print("\nOpção inválida\n")
+                            continue
+                    
                 if not encontrado: 
-                    print("\nEsse livro não foi encontrado...")
+                    print("\nEsse livro não foi encontrado...\n")
                     break
 
     except Exception as e:
