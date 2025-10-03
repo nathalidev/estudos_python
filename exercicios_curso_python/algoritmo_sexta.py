@@ -14,40 +14,25 @@
 # Caso o segundo parametro for uma lista, retorne um array de arrays, 
 # na qual cada elemento do array (de dentro) deverá mostrar o match de dados.
 
-lista1 = []
-
-for i in range(3):
-    termo_primeira_lista = input("Digite algo: ")
-    lista1.append(termo_primeira_lista)
-    
-lista_que_armazena_a_resposta = []
-
-quantidade_de_termos_a_comparar = int(input("Digite a quantidade de termos a serem comparados: "))
-
-if quantidade_de_termos_a_comparar > 1:
-    
-    lista_termos_a_serem_comparados=[]
-    
-    for i in range(quantidade_de_termos_a_comparar):
-        termo_a_ser_comparado = input("Digite o termo a ser comparado: ")
-        lista_termos_a_serem_comparados.append(termo_a_ser_comparado)
-        
+def test(lista_1, lista_termos_a_serem_comparados):
+    for nome, valor in {
+    "lista_1": lista_1,
+    "lista_termos_a_serem_comparados": lista_termos_a_serem_comparados
+    }.items():
+        if not isinstance(valor, list):
+            raise TypeError(f"O parâmetro '{nome}' deve ser uma lista.") # aqui eu ja trato especificamente o typeerror mais se eu não soubesse qual era o erro eu dfazia um try except Exception.
+# eu crio um dicionario depois pego o valor de cada campo e confiro em cada valor se é uma lista
+#forma mais facil de garantir que  o usuario vai passar as duas lsitas de termo a serem comparados entre si 
+    lista_que_armazena_a_resposta = []
     for termo in lista_termos_a_serem_comparados:
+        termo = str(termo) #garantindo que o termo é uma string
         resposta_de_cada_comparacao = []
-        
-        for elementos in lista1:
+        for elementos in lista_1:
+            elementos = str(elementos)
             resposta = elementos.count(termo)
             resposta_de_cada_comparacao.append(resposta)
             
         lista_que_armazena_a_resposta.append(resposta_de_cada_comparacao)
-        
-    print(f"{lista1} - {lista_termos_a_serem_comparados} -> {lista_que_armazena_a_resposta}")
-    
-else:
-    termo_a_ser_comparado = input("Digite o termo a ser comparado: ")
-    
-    for termo in lista1:
-        resposta = termo.count(termo_a_ser_comparado)
-        lista_que_armazena_a_resposta.append(resposta)
-        
-    print(f"{lista1} - {termo_a_ser_comparado} -> {lista_que_armazena_a_resposta}")
+    return print(f"{lista_1} - {lista_termos_a_serem_comparados} -> {lista_que_armazena_a_resposta}")
+
+test(['list', 'name', 'kkkkk'], ['k', 1, 'i', '3'])
