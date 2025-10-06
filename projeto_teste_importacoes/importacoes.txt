@@ -1,0 +1,16 @@
+Importações relativas vs. absolutas
+Relativas (from .modulo import algo) funcionam dentro do mesmo pacote, mas quebram se o arquivo for executado diretamente.
+
+Absolutas (from pacote.modulo import algo) funcionam entre pacotes diferentes e são para execução direta
+
+Pastas com __init__.py são tratadas como pacotes clássicos.
+
+Sem __init__.py, o Python 3.3+ trata como namespace packages, que funcionam em muitos casos — mas não com importações relativas.
+
+se for rodar arquivo com importações relativas diretamente rodar com python -m pacote.modulo(arquivo)
+
+Use if __name__ == "__main__" para executar funções apenas quando o módulo for rodado diretamente.
+
+Use relativa dentro do mesmo pacote.
+
+Use absoluta entre pacotes ou no ponto de entrada.
