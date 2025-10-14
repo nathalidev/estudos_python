@@ -12,15 +12,29 @@ def aumentar_preco(produtos, porcentagem):
         for p in copy.deepcopy(produtos)
     ]
 
-    return produtos_recalculados
+    print("Lista com produtos 10% mais caro:")
+    for produto in produtos_recalculados:
+        print(f'{produto}')
+    print('\n')
 
-print(aumentar_preco(produtos, 10))
+    
 
-def ordenar_produtos(produtos, chave, reverso=False):
-    produtos_ordenados = sorted(copy.deepcopy(produtos), key= lambda produto : produto[chave])
-    return produtos_ordenados
+aumentar_preco(produtos, 10)
 
-print(ordenar_produtos(produtos, "preco"))
+def ordenar_produtos(produtos, chave, reverso):
+    produtos_ordenados = sorted(copy.deepcopy(produtos), key= lambda produto : produto[chave], reverse = reverso)
+    print(f"Lista de produtos organizados por {chave}:")
+    for produto in produtos_ordenados:
+        print(f'{produto}')
+    print('\n')
+
+
+
+ordenar_produtos(produtos, "preco", True)
+
+ordenar_produtos(produtos, "nome", False)
+
+
 
 
 
