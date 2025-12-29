@@ -1,12 +1,24 @@
 jogadores = []
 while True:
     jogador = {}
-    nome = input("Digite o nome do jogador: ")
-    jogador['Nome'] = nome
-    idade = int(input("Digite a idade do jogador: "))
-    jogador['Idade'] = idade
-    posicao = input("Digite a posição do jogador: ")
-    jogador['Posição'] = posicao
+    try:
+        nome = input("Digite o nome do jogador: ")
+        jogador['Nome'] = nome
+    except ValueError:
+        print("Nome inválido. Tente novamente.")
+        continue
+    try:
+        idade = int(input("Digite a idade do jogador: "))
+        jogador['Idade'] = idade
+    except ValueError:
+        print("Idade inválida. Tente novamente.")
+        continue
+    try:
+        posicao = input("Digite a posição do jogador: ")
+        jogador['Posição'] = posicao
+    except ValueError:
+        print("Posição inválida. Tente novamente.")
+        continue
 
     while True:
         continuar = input("Deseja cadastrar outro jogador? (s/n): ")
