@@ -1,33 +1,43 @@
 jogadores = []
 while True:
     jogador = {}
-    try:
-        nome = input("Digite o nome do jogador: ")
+
+    nome = input("Digite o nome do jogador: ")
+    if not nome.replace(" ", "").isalpha():
+        raise ValueError("Nome deve conter apenas letras e espaços.")
+
+    else:
         jogador['Nome'] = nome
-    except ValueError:
-        print("Nome inválido. Tente novamente.")
-        continue
+
     try:
         idade = int(input("Digite a idade do jogador: "))
         jogador['Idade'] = idade
+
+        if idade < 0 or idade > 100:
+            print("Seu jogador tem uma idade inválida. Tente novamente.")
+            continue
     except ValueError:
         print("Idade inválida. Tente novamente.")
         continue
-    try:
-        posicao = input("Digite a posição do jogador: ")
+
+    posicao = input("Digite a posição do jogador: ")
+    if not posicao.isalpha():
+        raise ValueError("Posição deve conter apenas letras.")
+    else:
         jogador['Posição'] = posicao
-    except ValueError:
-        print("Posição inválida. Tente novamente.")
-        continue
+    
+    jogadores.append(jogador)
 
     while True:
         continuar = input("Deseja cadastrar outro jogador? (s/n): ")
         if continuar.lower() in ('s', 'sim'):
             break
         elif continuar.lower() in ('n', 'não', 'nao'):
-            for chave, valor in jogador.items():
-                print(f"{chave}: {valor}")
+            for i, jogador in enumerate(jogadores):
                 print("\n")
+                print(f"{i + 1} {jogador['Nome']}")
+                print(f"Idade: {jogador['Idade']}")
+                print(f"Posição: {jogador['Posição']}")
             exit()
         else:
             print("Resposta inválida. Por favor, responda com 's' ou 'n'.")
