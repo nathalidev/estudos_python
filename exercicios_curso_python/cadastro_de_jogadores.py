@@ -10,7 +10,7 @@ while True:
         jogador['Nome'] = nome
 
     try:
-        idade = int(input("Digite a idade do jogador: "))
+        idade = int(input("\nDigite a idade do jogador: "))
         jogador['Idade'] = idade
 
         if idade < 0 or idade > 100:
@@ -20,7 +20,7 @@ while True:
         print("Idade inválida. Tente novamente.")
         continue
 
-    posicao = input("Digite a posição do jogador: ")
+    posicao = input("\nDigite a posição do jogador: ")
     if not posicao.isalpha():
         raise ValueError("Posição deve conter apenas letras.")
     else:
@@ -29,7 +29,7 @@ while True:
     jogadores.append(jogador)
 
     while True:
-        continuar = input("Deseja cadastrar outro jogador? (s/n): ")
+        continuar = input("\nDeseja cadastrar outro jogador? (s/n): ")
         if continuar.lower() in ('s', 'sim'):
             break
         elif continuar.lower() in ('n', 'não', 'nao'):
