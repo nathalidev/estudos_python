@@ -10,20 +10,66 @@
 
     <header>
         <img id="logo-sistema" src="{{ url_for('static', filename='images/logo_app.png') }}" alt="Logo do sistema">
-        <p>Automatize seus agendamentos e reduza faltas de clientes.</p>
+        <p>Do WhatsApp bagunçado ao orçamento elegante.</p>
     </header>
 
-    <main>
-        <div>
-            <h3>Bem vindo(a) ao nosso sistema!</h3>
-            <p><strong>Transforme sua agenda em um sistema inteligente.</strong></p>
-            <p>Nossa aplicação automatiza agendamentos, confirmações e lembretes de clientes em um só lugar, reduzindo faltas e economizando tempo no atendimento, simples, rápida e pensada para profissionais que querem focar no serviço — não na correria do WhatsApp.</p>
-        </div>
+    <img id="imagem_principal" src="{{ url_for('static', filename='images/imagem_principal.png') }}" alt="Pessoas utilizando o sistema">
 
-        <div>
-            <h4>Mas e como funciona?</h4>
-            <p></p>
-        </div>
+    <main>
+        <section class="secao_site" id="secao_titulo">
+            <h3>Bem vindo(a) ao nosso sistema!</h3>
+            <p>Crie orçamentos profissionais em segundos. Gere PDFs organizados, rápidos e prontos para enviar aos seus clientes sem complicação.</p>
+        </section>
+
+        <section class="secao_site" id="secao_beneficios">
+            <div class="beneficio">
+                <h3>⚡ Rápido</h3>
+                <p>Crie orçamentos em menos de 30 segundos.</p>
+            </div>
+            
+            <div class="beneficio">
+                <h3>📄 Profissional</h3>
+                <p>PDFs organizados e prontos para enviar.</p>
+            </div>
+
+            <div class="beneficio">
+                <h3>📱 Simples</h3>
+                <p>Funciona direto do celular ou computador.</p>
+            </div>
+        </section>
+
+        <section class="secao_site" id="secao_explicao">
+            <h2>Mas e como funciona?</h2>
+
+            <div class="card_passo">
+                <img id="preenchendo_form" src="{{ url_for('static', filename='images/preenchendo_form.png') }}" alt="Icone do card">
+                <h3>Preencha as informações</h3>
+                <p>Adicione os dados do cliente, serviço, valor e descrição.</p>
+            </div>
+
+            <div class="card_passo">
+                <img id="pdf_icone" src="{{ url_for('static', filename='images/icone_pdf.png') }}" alt="Icone do card">
+                <h3>Gere o PDF</h3>
+                <p>O sistema cria automaticamente um orçamento profissional.</p>
+            </div>
+
+            <div class="card_passo">
+                <img id="envio_icone" src="{{ url_for('static', filename='images/envio_icone.png') }}" alt="Icone do card">
+                <h3>Envie para o cliente</h3>
+                <p>Baixe o PDF pronto e envie pelo whatsapp ou email.</p>
+            </div>
+
+            <button>Criar orçamento</button>
+
+        </section>
     </main>
+    <footer>
+
+        <p>© 2026 Orçamento Rápido</p>
+
+    </footer>
 </body>
 </html>
+
+<!-- Use <section> quando:
+O bloco teria sentido com um título. -->
