@@ -7,25 +7,30 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-
-    <header>
+    <nav>
+    <ul id="ul_navbar">
         <img id="logo-sistema" src="{{ url_for('static', filename='images/logo_app.png') }}" alt="Logo do sistema">
-        <p>Do WhatsApp bagunçado ao orçamento elegante.</p>
-    </header>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Contato</a></li>
+    </ul>
+    </nav>
 
-    <img id="imagem_principal" src="{{ url_for('static', filename='images/imagem_principal.png') }}" alt="Pessoas utilizando o sistema">
-
+    
     <main>
+        <header>
+            <p>Do WhatsApp bagunçado ao orçamento elegante.</p>
+        </header>
         <section class="secao_site" id="secao_titulo">
             <h3>Bem vindo(a) ao nosso sistema!</h3>
             <p>Crie orçamentos profissionais em segundos. Gere PDFs organizados, rápidos e prontos para enviar aos seus clientes sem complicação.</p>
         </section>
 
-        <div>
+        <div class="imagem_principal">
             <img id="orcamento_imagem" src="{{ url_for('static', filename='images/orcamento_imagem.png') }}" alt="Exemplo de Orçamento">
         </div>
 
-        <div>
+        <div class="imagem_principal">
             <img id="calculadora_caneta" src="{{ url_for('static', filename='images/calculadora_caneta.png') }}" alt="Calculadora e caneta">
         </div>
 
@@ -70,12 +75,12 @@
             <button>Criar orçamento</button>
 
         </section>
+        <footer>
+    
+            <p>© 2026 Orçamento Rápido</p>
+    
+        </footer>
     </main>
-    <footer>
-
-        <p>© 2026 Orçamento Rápido</p>
-
-    </footer>
 </body>
 </html>
 
