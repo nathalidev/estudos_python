@@ -1,8 +1,14 @@
+@font-face {
+    font-family: 'MinhaFonte';
+    src: url('../fonts/Napoli.ttf') format('truetype');
+}
+
 body {
     background: radial-gradient(500px, rgb(179, 209, 255), white);
     display: flex;
     margin: 0;
     min-height: 100vh;
+    font-family: 'MinhaFonte', sans-serif;
 }
 
 nav{
@@ -12,7 +18,7 @@ nav{
     left: 0;
     width: 10%;
     margin-right: 2%;
-    background: linear-gradient(45deg, rgb(89, 158, 214), white);
+    background: linear-gradient(to top, rgb(0, 23, 82), white);
 }
 
 main {
@@ -22,11 +28,11 @@ main {
 
 a{
     text-decoration: none;
-    color: rgb(13, 73, 122);
+    color: rgb(0, 23, 82);
 }
 
 li{
-    margin-left: 12px;
+    margin-left: 17.5px;
 }
 
 #logo-sistema{
@@ -46,8 +52,10 @@ img{
 
 .imagem-principal{
     display: inline-block;
+    right: 1;
     flex-direction: column;
 }
+
 
 #ul_navbar{
     display: flex;
