@@ -9,6 +9,10 @@ body {
     font-family: 'MinhaFonte', sans-serif;
 }
 
+header{
+    font-size: clamp(12px, 4vw, 4rem);
+}
+
 nav{
     position: sticky;
     top: 0;
