@@ -10,7 +10,13 @@ body {
 }
 
 header{
-    font-size: clamp(12px, 4vw, 4rem);
+    font-size: clamp(12px, 2vw, 2rem);
+    align-self: center;
+    width: 30%;
+}
+
+.provisorio{
+    font-size: 1rem;
 }
 
 nav{
@@ -33,6 +39,17 @@ nav{
 main {
     /* margin-left: 12%; */
     width: 90%;
+    display:flex;
+    flex-direction:row;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.conteudo-main{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 a{
@@ -65,7 +82,7 @@ img{
     width: 100px;
 }
 
-.imagem-principal{
+.imagem_principal{
     display: inline-block;
     right: 1;
     flex-direction: column;
@@ -110,6 +127,17 @@ img{
 
     body{
         flex-direction: column;
+    }
+
+    main{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    header,
+    .conteudo-main{
+        width: 100%;
+        flex: none;
     }
 
     a{
