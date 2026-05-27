@@ -18,37 +18,36 @@
     </nav>
     
     <main>
-        <header>
-            <h3>Bem vindo(a) ao nosso sistema!</h3>
-            <p>Do WhatsApp bagunçado ao orçamento elegante.</p>
-            <p><span class="provisorio">Crie orçamentos profissionais em segundos. Gere PDFs organizados, rápidos e prontos para enviar aos seus clientes sem complicação.</span></p>
-        </header>
-        <div class="conteudo-main">
-            <section class="secao_site" id="secao_beneficios">
-                <div class="beneficio">
-                    <h3>⚡ Rápido</h3>
-                    <p>Crie orçamentos em menos de 30 segundos.</p>
-                </div>
-                
-                <div class="beneficio">
-                    <h3>📄 Profissional</h3>
-                    <p>PDFs organizados e prontos para enviar.</p>
-                </div>
-    
-                <div class="beneficio">
-                    <h3>📱 Simples</h3>
-                    <p>Funciona direto do celular ou computador.</p>
-                </div>
-            </section>
-
-            <div class="imagem_principal">
-                <img id="orcamento_imagem" src="{{ url_for('static', filename='images/orcamento_imagem.png') }}" alt="Exemplo de Orçamento">
+        <section class="secao_site" id="secao_beneficios">
+            <div class="beneficio">
+                <h3>⚡ Rápido</h3>
+                <p>Crie orçamentos em menos de 30 segundos.</p>
+            </div>
+            
+            <div class="beneficio">
+                <h3>📄 Profissional</h3>
+                <p>PDFs organizados e prontos para enviar.</p>
             </div>
 
-            <div class="imagem_principal">
+            <div class="beneficio">
+                <h3>📱 Simples</h3>
+                <p>Funciona direto do celular ou computador.</p>
+            </div>
+        </section>
+        <header>
+            <div class="header-texto">
+                <h3>Bem vindo(a) ao nosso sistema!</h3>
+                <p>Do WhatsApp bagunçado ao orçamento elegante.</p>
+                <p><span class="provisorio">Crie orçamentos profissionais em segundos. Gere PDFs organizados, rápidos e prontos para enviar aos seus clientes sem complicação.</span></p>
+            </div>
+            <div class="header-imagem">
+                <img id="orcamento_imagem" src="{{ url_for('static', filename='images/orcamento_imagem.png') }}" alt="Exemplo de Orçamento">
                 <img id="calculadora_caneta" src="{{ url_for('static', filename='images/calculadora_caneta.png') }}" alt="Calculadora e caneta">
             </div>
+        </header>
+        
 
+        <div class="conteudo-main">
 
             <section class="secao_site" id="secao_explicao">
                 <h2>Mas e como funciona?</h2>
