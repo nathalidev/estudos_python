@@ -55,7 +55,7 @@ li{
 a{
     text-decoration: none;
     color: rgb(0, 23, 82);
-    font-size: clamp(0.5rem, 1vw, 1.5rem);
+    font-size: clamp(12px, 2vw, 2rem);
     font-weight: bold;
 }
 
@@ -89,12 +89,16 @@ a:hover{
         rgb(10, 35, 110) 100%
     );
     color: white;
-    min-height: 165px;
-    flex: 0 1 170px;
-    max-width: 190px;
+    height: auto;
+    width: 20%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-size: clamp(12px, 2vw, 2rem);
+}
+
+.beneficio h3, .beneficio p{
+    margin: 0.5rem 0;
 }
 
 /* Header (após benefícios) */
