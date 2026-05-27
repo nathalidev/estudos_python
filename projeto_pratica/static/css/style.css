@@ -1,12 +1,45 @@
 @font-face {
     font-family: 'MinhaFonte';
-    src: url('../fonts/Napoli.ttf') format('truetype');
+    src: url('../fonts/Napzer-Regular.otf') format('truetype');
 }
 
 body {
     display: flex;
     margin: 0;
     font-family: 'MinhaFonte', sans-serif;
+    color: rgb(0, 23, 82);
+}
+
+.beneficio{
+    border: 2px solid rgb(5, 22, 75);
+    border-radius: 15px;
+    box-shadow: 3px 3px 12px black;
+    padding: 0 15px;
+    text-align: center;
+    background: linear-gradient(
+        180deg,
+        rgb(56, 99, 230) 0%,
+        rgb(27, 64, 175) 60%,
+        rgb(10, 35, 110) 100%
+    );
+    color: white;
+    height: 100%
+}
+
+
+
+
+
+#secao_beneficios{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+    height: 20%;
+}
+
+.beneficio{
+    flex: 1 1 167px; /*1 encolhe qnd falta espço 1 cresce quando sobra e 167 tam inicial */
 }
 
 header{
@@ -56,6 +89,7 @@ a{
     text-decoration: none;
     color: rgb(0, 23, 82);
     font-size: clamp(0.5rem, 1vw, 1.5rem);
+    font-weight: bold;
 }
 
 a:hover{
