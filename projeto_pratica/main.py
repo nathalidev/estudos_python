@@ -9,5 +9,9 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
+@app.route("/criar-orcamento")
+def criar_orcamento():
+    return render_template("criar_orcamento.html")
+
 if __name__ == "__main__":
     app.run(debug=True)

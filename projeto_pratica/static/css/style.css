@@ -3,6 +3,13 @@
     src: url('../fonts/Napzer-Regular.otf') format('truetype');
 }
 
+.material-symbols-outlined {
+  font-size: 24px;   /* tamanho do ícone */
+  color: rgb(0, 23, 82);    /* cor azul */
+  vertical-align: middle; /* alinhamento com o texto */
+}
+
+
 /* base */
 body {
     display: flex;

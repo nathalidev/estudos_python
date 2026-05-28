@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Orçamento</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+</head>
+<body>
+    
+    <nav aria-label="Navegação principal">
+        <ul id="ul_navbar">
+            <li>
+                <a href="#" aria-label="Página inicial">
+                    <img id="logo-sistema" src="{{ url_for('static', filename='images/logo_app.png') }}" alt="Logo do sistema">
+                </a>
+            </li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <header class="header-texto">
+            <h1>Novo orçamento</h1>
+            <p>Preencha as informações abaixo para gerar seu orçamento.</p>
+        </header>
+
+        <section class="conteudo-main" aria-labelledby="info-orcamento">
+            <form method="post" action="#" novalidate>
+                <fieldset>
+                    <legend id="info-orcamento">
+                        <span class="material-symbols-outlined" aria-hidden="true">assignment_add</span>
+                        Informações do Orçamento
+                    </legend>
+
+                    <div>
+                        <label for="nome">Nome do cliente</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+
+                    <div>
+                        <label for="servico_item">Serviço prestado / Item</label>
+                        <input type="text" id="servico_item" name="servico_item" required>
+                    </div>
+
+                    <div>
+                        <label for="valor">Valor unitário</label>
+                        <input type="number" id="valor" name="valor" step="0.01" placeholder="0,00" required>
+                    </div>
+
+                    <div>
+                        <label for="descricao">Descrição do trabalho</label>
+                        <input type="text" id="descricao" name="descricao" required>
+                    </div>
+
+                    <div>
+                        <label for="observacoes">Observações adicionais</label>
+                        <input type="text" id="observacoes" name="observacoes">
+                    </div>
+
+                    <div>
+                        <label for="prazo">Prazo de entrega</label>
+                        <input type="date" id="prazo" name="prazo" required>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>
+                        <span class="material-symbols-outlined" aria-hidden="true">data_alert</span>
+                        Importante
+                    </legend>
+                    <p>Revise todas as informações antes de gerar o PDF.</p>
+                </fieldset>
+
+                <div>
+                    <button type="reset">
+                        <span class="material-symbols-outlined" aria-hidden="true">delete_forever</span>
+                        Limpar campos
+                    </button>
+                    <button type="submit">Gerar PDF</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Orçamento Rápido</p>
+    </footer>
+</body>
+</html>
+
+<!-- Use <section> quando:
+O bloco teria sentido com um título. -->
