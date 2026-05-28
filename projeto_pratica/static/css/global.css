@@ -20,6 +20,7 @@ body {
     font-family: 'MinhaFonte', sans-serif;
     color: rgb(0, 23, 82);
     background: radial-gradient(ellipse, rgb(202, 202, 202), rgb(255, 255, 255));
+    flex-direction: row;
 }
 
 nav {
@@ -77,7 +78,7 @@ main {
     flex: 1 1 auto;
     min-width: 0; /* permite que filhos encolham corretamente dentro do flex */
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 2.5rem;
 }
 

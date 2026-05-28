@@ -4,8 +4,7 @@ main {
 }
 
 main > header {
-    align-self: center;
-    width: 100%;
+    width: 50%;
 }
 
 main > header h1 {
@@ -33,6 +32,11 @@ main > header p {
     border-radius: 12px;
     padding: 1.25rem;
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    width: 100%
+}
+
+#teste{
+    width: 50%;
 }
 
 .conteudo-main fieldset {
