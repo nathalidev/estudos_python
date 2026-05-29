@@ -78,7 +78,7 @@ main {
     flex: 1 1 auto;
     min-width: 0; /* permite que filhos encolham corretamente dentro do flex */
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 2.5rem;
 }
 
