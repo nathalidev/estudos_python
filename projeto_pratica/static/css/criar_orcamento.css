@@ -1,26 +1,19 @@
 main {
-    padding-right: 1rem;
-    padding-top: 1rem;
+    padding: 1rem;
 }
 
-main > header {
-    width: 50%;
-}
-
-main > header h1 {
-    font-size: clamp(1.2rem, 2.6vw, 2.5rem);
-    margin: 0;
-}
-
-main > header p {
-    font-size: clamp(0.9rem, 1.4vw, 1.2rem);
-    margin: 0;
+.orcamento-layout {
+    display: flex;
+    gap: 1.5rem;
+    align-items: stretch;
+    width: 100%;
 }
 
 .conteudo-main {
-    max-width: none;
-    width: 100%;
+    flex: 1 1 0;
+    min-width: 0;
     align-items: stretch;
+    margin: 0;
 }
 
 .conteudo-main form {
@@ -32,11 +25,20 @@ main > header p {
     border-radius: 12px;
     padding: 1.25rem;
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
-    width: 100%
+    width: 100%;
 }
 
-#teste{
-    width: 50%;
+.preview-orcamento {
+    min-height: 100%;
+}
+
+.preview-vazia {
+    flex: 1;
+    min-height: 18rem;
+    width: 100%;
+    border: 1px dashed rgba(10, 35, 110, 0.25);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.45);
 }
 
 .conteudo-main fieldset {
@@ -108,9 +110,11 @@ main > header p {
 
 @media (max-width: 768px) {
     main {
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
-        padding-top: 0.75rem;
+        padding: 0.75rem;
+    }
+
+    .orcamento-layout {
+        flex-direction: column;
     }
 
     .conteudo-main form {
