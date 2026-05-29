@@ -1,4 +1,4 @@
-#secao_beneficios {
+.secao-beneficios {
     display: flex;
     flex-direction: row;
     gap: 1.5rem;
@@ -74,12 +74,12 @@ header p {
     position: relative;
 }
 
-#orcamento_imagem {
+.orcamento-imagem {
     height: auto;
     width: 100%;
 }
 
-#calculadora_caneta {
+.calculadora-caneta {
     position: absolute;
     width: 50%;
     height: auto;
@@ -87,7 +87,7 @@ header p {
     right: 0;
 }
 
-#secao_explicacao {
+.secao-explicacao {
     display: flex;
     flex-direction: row;
     gap: 1rem;
@@ -153,7 +153,7 @@ header p {
         font-size: clamp(0.8rem, 4vw, 1.2rem);
     }
 
-    #secao_beneficios {
+    .secao-beneficios {
         gap: 0.75rem;
         margin: 0.75rem auto 0;
         padding: 0 0.75rem;
@@ -164,7 +164,7 @@ header p {
         font-size: clamp(0.65rem, 3vw, 1rem);
     }
 
-    #secao_explicacao {
+    .secao-explicacao {
         flex-direction: column;
         gap: 0.75rem;
     }

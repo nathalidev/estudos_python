@@ -7,15 +7,14 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/criar_orcamento.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-
 </head>
 <body>
     
     <nav aria-label="Navegação principal">
-        <ul id="ul_navbar">
+        <ul class="ul-navbar">
             <li>
                 <a href="#" aria-label="Página inicial">
-                    <img id="logo-sistema" src="{{ url_for('static', filename='images/logo_app.png') }}" alt="Logo do sistema">
+                    <img class="logo-sistema" src="{{ url_for('static', filename='images/logo_app.png') }}" alt="Logo do sistema">
                 </a>
             </li>
             <li><a href="{{ url_for('home') }}">Home</a></li>
@@ -32,7 +31,7 @@
                     <p>Preencha as informações abaixo para gerar seu orçamento.</p>
                 </header>
                 
-                <form method="post" action="#" novalidate>
+                <form method="post" action="#">
                     <fieldset>
                         <legend id="info-orcamento">
                             <span class="material-symbols-outlined" aria-hidden="true">assignment_add</span>
@@ -56,12 +55,12 @@
 
                         <div>
                             <label for="descricao">Descrição do trabalho</label>
-                            <input type="text" id="descricao" name="descricao" required>
+                            <textarea id="descricao" name="descricao"></textarea required>
                         </div>
 
                         <div>
                             <label for="observacoes">Observações adicionais</label>
-                            <input type="text" id="observacoes" name="observacoes">
+                            <textarea id="observacoes" name="observacoes"></textarea required>
                         </div>
                         
                         <div>
@@ -84,7 +83,13 @@
                             <span class="material-symbols-outlined" aria-hidden="true">delete_forever</span>
                             Limpar campos
                         </button>
-                        <button type="submit">Gerar PDF</button>
+                        <button type="submit">
+                            <span class="material-symbols-outlined simbolo-pdf">
+                                picture_as_pdf
+                            </span>
+
+                            Gerar PDF
+                        </button>
                     </div>
                 </form>
             </section>
@@ -101,7 +106,9 @@
             <p>© 2026 Orçamento Rápido</p>
         </footer>
     </main>
-
+    <script
+        src="{{ url_for('static', filename='js/preview.js') }}">
+    </script>
 </body>
 </html>
 
