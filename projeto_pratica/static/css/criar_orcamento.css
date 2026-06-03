@@ -128,9 +128,17 @@ footer{
     border: 1px solid rgba(0, 23, 82, 0.25);
 }
 
+.conteudo-main button[type='reset']:active {
+    background: rgba(204, 204, 204, 0.8);
+}
+
 .conteudo-main button[type='submit'] {
     background: rgb(10, 35, 110);
     color: rgb(255, 255, 255);
+}
+
+.conteudo-main button[type='submit']:active {
+    background: rgb(3, 18, 63);
 }
 
 @media (max-width: 425px) {
