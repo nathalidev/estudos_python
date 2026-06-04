@@ -39,8 +39,47 @@
                         </legend>
 
                         <div>
+                            <label for="sua_empresa">Nome de sua empresa</label>
+                            <input type="text" id="sua_empresa" name="sua_empresa" required>
+                        </div>
+
+                        <div>
                             <label for="nome">Nome do cliente</label>
                             <input type="text" id="nome" name="nome" required>
+                        </div>
+
+                        <div>
+                            <label for="email">Seu email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div>
+                            <label for="email_cliente">Email do cliente</label>
+                            <input type="email" id="email_cliente" name="email_cliente" required>
+                        </div>
+
+                        <div>
+                            <label for="telefone_sua_empresa">Telefone da sua empresa</label>
+                            <input type="text" id="telefone_sua_empresa" name="telefone_sua_empresa" required>
+                        </div>
+
+                        <div>
+                            <label for="validade">Gostaria de inserir validade no orçamento:</label>
+                            <select id="validade" name="validade">
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                            </select>
+
+                        </div>
+
+                        <div style="display: none;" id="campo-validade">
+                            <label for="validade">Validade</label>
+                            <input type="date" id="validade" name="validade" required>
+                        </div>
+
+                        <div>
+                            <label for="telefone">Telefone do cliente</label>
+                            <input type="text" id="telefone" name="telefone" required>
                         </div>
 
                         <div>

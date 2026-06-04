@@ -15,7 +15,7 @@
 }
 
 .ul-navbar li {
-    min-width: 0; /* evita que o conteúdo ultrapasse */
+    min-width: 120px; /* evita que o conteúdo ultrapasse */
 }
 
 body {
