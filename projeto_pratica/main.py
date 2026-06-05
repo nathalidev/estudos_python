@@ -12,6 +12,9 @@ def home():
 @app.route("/criar-orcamento")
 def criar_orcamento():
     return render_template("criar_orcamento.html")
+@app.route('/orcamento')
+def orcamento():
+    return render_template('components/orcamento.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

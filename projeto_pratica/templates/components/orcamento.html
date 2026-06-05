@@ -4,9 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/orcamento.css') }}">
 </head>
 <body>
-    <main></main>
+    <div class="dados-empresas">
+        <div class="sua-empresa">
+            <p>Sua empresa</p>
+            <p>nathalidorio@gmail.com</p>
+            <p>www.seusite.com</p>
+        </div>
+
+        <div class="empresa-cliente">
+            <p>Cliente:</p>
+            <p>João Pé de Feijão</p>
+            <p>Tel: (19) 99999-9999</p>
+            <p>Data: 20/04/2024</p>
+            <p>Validade: 05/05/2024</p>
+        </div>
+    </div>
+    <div class="orcamento">
+        <h1>Orçamento</h1>
+        <table>
+            <thead>
+                <tr>
+                <th>Descrição</th>
+                <th>Quantidade</th>
+                <th>Valor Unitário</th>
+                <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>Produto A</td>
+                <td>2</td>
+                <td>R$ 50,00</td>
+                <td>R$ 100,00</td>
+                </tr>
+                <tr>
+                <td>Produto B</td>
+                <td>1</td>
+                <td>R$ 80,00</td>
+                <td>R$ 80,00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <footer></footer>
 </body>
 </html>
