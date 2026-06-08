@@ -38,76 +38,98 @@
                             Informações do Orçamento
                         </legend>
 
+                        <!-- Sua empresa -->
                         <div>
-                            <label for="sua_empresa">Nome de sua empresa</label>
+                            <label for="sua_empresa">Nome da sua empresa</label>
                             <input type="text" id="sua_empresa" name="sua_empresa" required>
                         </div>
 
                         <div>
-                            <label for="nome">Nome do cliente</label>
-                            <input type="text" id="nome" name="nome" required>
-                        </div>
-
-                        <div>
-                            <label for="email">Seu email</label>
+                            <label for="email">Seu e-mail</label>
                             <input type="email" id="email" name="email" required>
                         </div>
 
                         <div>
-                            <label for="email_cliente">Email do cliente</label>
-                            <input type="email" id="email_cliente" name="email_cliente" required>
+                            <label for="seu_site">Seu site</label>
+                            <input type="url" id="seu_site" name="seu_site" placeholder="www.seusite.com">
                         </div>
 
                         <div>
                             <label for="telefone_sua_empresa">Telefone da sua empresa</label>
-                            <input type="text" id="telefone_sua_empresa" name="telefone_sua_empresa" required>
+                            <input type="tel" id="telefone_sua_empresa" name="telefone_sua_empresa" required>
+                        </div>
+
+                        <!-- Cliente -->
+                        <div>
+                            <label for="nome_cliente">Nome do cliente</label>
+                            <input type="text" id="nome_cliente" name="nome_cliente" required>
                         </div>
 
                         <div>
-                            <label for="validade">Gostaria de inserir validade no orçamento:</label>
-                            <select id="validade" name="validade">
-                            <option value="sim">Sim</option>
-                            <option value="nao">Não</option>
+                            <label for="telefone_cliente">Telefone do cliente</label>
+                            <input type="tel" id="telefone_cliente" name="telefone_cliente" required>
+                        </div>
+
+                        <div>
+                            <label for="email_cliente">E-mail do cliente</label>
+                            <input type="email" id="email_cliente" name="email_cliente" required>
+                        </div>
+
+                        <!-- Validade -->
+                        <div>
+                            <label for="inserir_validade">Inserir validade no orçamento?</label>
+                            <select id="inserir_validade" name="inserir_validade">
+                                <option value="sim">Sim</option>
+                                <option value="nao">Não</option>
                             </select>
-
                         </div>
 
-                        <div style="display: none;" id="campo-validade">
-                            <label for="validade">Validade</label>
-                            <input type="date" id="validade" name="validade" required>
+                        <div id="campo-validade" style="display: none;">
+                            <label for="data_validade">Validade</label>
+                            <input type="date" id="data_validade" name="data_validade">
                         </div>
 
+                        <!-- Itens -->
                         <div>
-                            <label for="telefone">Telefone do cliente</label>
-                            <input type="text" id="telefone" name="telefone" required>
-                        </div>
-
-                        <div>
-                            <label for="servico_item">Serviço prestado / Item</label>
+                            <label for="servico_item">Serviço / Item</label>
                             <input type="text" id="servico_item" name="servico_item" required>
                         </div>
-                        
+
+                        <div>
+                            <label for="quantidade">Quantidade</label>
+                            <input type="number" id="quantidade" name="quantidade" min="1" value="1" required>
+                        </div>
+
                         <div>
                             <label for="valor">Valor unitário</label>
                             <input type="number" id="valor" name="valor" step="0.01" placeholder="0,00" required>
                         </div>
 
                         <div>
-                            <label for="descricao">Descrição do trabalho</label>
-                            <textarea id="descricao" name="descricao"></textarea required>
+                            <label for="desconto">Desconto (R$)</label>
+                            <input type="number" id="desconto" name="desconto" step="0.01" placeholder="0,00" value="0">
                         </div>
 
+                        <!-- Observações -->
                         <div>
                             <label for="observacoes">Observações adicionais</label>
-                            <textarea id="observacoes" name="observacoes"></textarea required>
+                            <textarea id="observacoes" name="observacoes"></textarea>
                         </div>
-                        
+
+                        <!-- Prazo -->
                         <div>
                             <label for="prazo">Prazo de entrega</label>
                             <input type="date" id="prazo" name="prazo" required>
                         </div>
+
+                        <!-- Condições de pagamento -->
+                        <div>
+                            <label for="condicoes_pagamento">Condições de pagamento</label>
+                            <input type="text" id="condicoes_pagamento" name="condicoes_pagamento"
+                                placeholder="Ex: À vista ou em até 3× sem juros">
+                        </div>
                     </fieldset>
-                    
+
                     <fieldset>
                         <legend>
                             <span class="material-symbols-outlined" aria-hidden="true">data_alert</span>
@@ -115,24 +137,19 @@
                         </legend>
                         <p>Revise todas as informações antes de gerar o PDF.</p>
                     </fieldset>
-                    
-                    
+
                     <div>
                         <button type="reset">
                             <span class="material-symbols-outlined" aria-hidden="true">delete_forever</span>
                             Limpar campos
                         </button>
                         <button type="submit">
-                            <span class="material-symbols-outlined simbolo-pdf">
-                                picture_as_pdf
-                            </span>
-
+                            <span class="material-symbols-outlined simbolo-pdf">picture_as_pdf</span>
                             Gerar PDF
                         </button>
                     </div>
                 </form>
             </section>
-
             <section class="conteudo-main preview-orcamento" aria-labelledby="previa-orcamento">
                 <header class="header-texto">
                     <h1 id="previa-orcamento">Prévia do orçamento</h1>

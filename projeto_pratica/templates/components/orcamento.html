@@ -5,21 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/orcamento.css') }}">
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
 </head>
 <body>
     <div class="dados-empresas">
         <div class="sua-empresa">
-            <p>Sua empresa</p>
-            <p>nathalidorio@gmail.com</p>
-            <p>www.seusite.com</p>
+            <p id="preview-empresa">Sua empresa</p>
+            <p id="preview-email">nathalidorio@gmail.com</p>
+            <p id="preview-site">www.seusite.com</p>
+            <p id="telefone-empresa">Tel: (19) 99999-8888</p>
         </div>
 
         <div class="empresa-cliente">
-            <p>Cliente:</p>
-            <p>João Pé de Feijão</p>
-            <p>Tel: (19) 99999-9999</p>
-            <p>Data: 20/04/2024</p>
-            <p>Validade: 05/05/2024</p>
+            <div class="cliente-p">
+                <p>Cliente:</p>
+                <p id="preview-cliente">João Pé de Feijão</p>
+            </div>
+            <p id="telefone-cliente">Tel: (19) 99999-9999</p>
+            <p id="email-cliente">jaopefeijao@gmail.com</p>
+            <p id="data-hoje">Data: 20/04/2024</p>
+            <p id="validade">Validade: 05/05/2024</p>
         </div>
     </div>
     <div class="orcamento">
@@ -49,6 +55,38 @@
             </tbody>
         </table>
     </div>
-    <footer></footer>
+    <div class="descricao-valores">
+        <div class="descricao-valores-filho1">
+            <h2>Descrição/Observações</h2>
+            <p id="observacoes-adicionais">Descrição dos serviços ou produtos incluidos neste orçamento.Qualquer detalhe adicional pode ser informado aqui.</p>
+        </div>
+        <div class="descricao-valores-filho2">
+            <div class="descricao-valores-p">
+                <p>Subtotal</p>
+                <p>R$180,00</p>
+            </div>
+            <div class="descricao-valores-p">
+                <p>Desconto</p>
+                <p>R$ 0,00</p>
+            </div>
+            <div class="descricao-valores-p">
+                <p>Total</p>
+                <p id="total-tudo">R$ 180,00</p>
+            </div>
+        </div>
+    </div>
+    <div class="descricao-valores2">
+        <div>
+            <h2>Prazo de Entrega</h2>
+            <p><span class="material-symbols-outlined">timer</span>Até 7 dias úteis após a confirmação do pagamento.</p>
+        </div>
+        <div>
+            <h2>Condições de pagamento</h2>
+            <p><span class="material-symbols-outlined">payment_arrow_down</span>Pagamento á vista ou em até 3x sem juros.</p>
+        </div>
+    </div>
+    <footer>
+        <p>© 2026 Orçamento Rápido</p>
+    </footer>
 </body>
 </html>

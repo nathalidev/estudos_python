@@ -1,8 +1,53 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const hoje = new Date().toISOString().split("T")[0];
-    const validadeInput = document.getElementById("validade");
-    validadeInput.min = hoje;
-    validadeInput.max = "9999-12-31";
+    const dataHoje = document.getElementById("data-hoje");
+
+    // Pega a data atual
+    const hoje = new Date();
+
+    // Formata para o padrão brasileiro (dd/mm/yyyy)
+    const dia = String(hoje.getDate()).padStart(2, "0");
+    const mes = String(hoje.getMonth() + 1).padStart(2, "0"); // mês começa em 0
+    const ano = hoje.getFullYear();
+
+    const dataFormatada = `${dia}/${mes}/${ano}`;
+
+  // Atualiza o conteúdo do elemento
+    dataHoje.textContent = `Data: ${dataFormatada}`;
+    dataValidade.min = hoje;
+    dataValidade.max = "9999-12-31";
+
+    const suaEmpresa = document.getElementById("sua_empresa");
+    const email = document.getElementById("email");
+    const seuSite = document.getElementById("seu_site");
+    const telefoneSuaEmpresa = document.getElementById("telefone_sua_empresa");
+
+    // Campos do cliente
+    const nomeCliente = document.getElementById("nome_cliente");
+    const telefoneCliente = document.getElementById("telefone_cliente");
+    const emailCliente = document.getElementById("email_cliente");
+
+    // Validade
+    const inserirValidade = document.getElementById("inserir_validade");
+    const campoValidade = document.getElementById("campo-validade");
+    const dataValidade = document.getElementById("data_validade");
+
+    // Itens
+    const servicoItem = document.getElementById("servico_item");
+    const quantidade = document.getElementById("quantidade");
+    const valor = document.getElementById("valor");
+    const desconto = document.getElementById("desconto");
+
+    // Observações
+    const observacoes = document.getElementById("observacoes");
+
+    // Prazo
+    const prazo = document.getElementById("prazo");
+
+    // Condições de pagamento
+    const condicoesPagamento = document.getElementById("condicoes_pagamento");
+
+    // Preview
+    const meuPreview = document.getElementById("meu-preview");
 
     const regex = /^[A-Za-zÀ-ÿ\s]+$/;
 
@@ -20,19 +65,15 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-    function pegarValorExibir() {
-        const preview = document.querySelector('.preview-vazia');
-        const nomeCliente = document.getElementById("nome").value.trim();
-        const servicoItem = document.getElementById("servico_item").value.trim();
-        const valorUnitario = document.getElementById("valor").value;
-        const descricao = document.getElementById("descricao").value.trim();
-        const observacoes = document.getElementById("observacoes").value.trim();
-        const prazoEntrega = document.getElementById("prazo").value;
 
-        const teste = document.getElementById("meu-preview");
-        teste.textContent = `${nomeCliente}`
-
+    function pegarValorExibir(campoDoInput, campoDoOrcamento) {
+        const campoEmpresa = document.getElementById(campoDoInput);
+        const previewEmpresa = document.getElementById(campoDoOrcamento);
+        previewEmpresa.textContent = campoEmpresa.value;
     }
 
-    document.getElementById("nome").addEventListener("input", pegarValorExibir);
+    campoEmpresa.addEventListener("input", function() {
+        pegarValorExibir
+    });
+    
 });
