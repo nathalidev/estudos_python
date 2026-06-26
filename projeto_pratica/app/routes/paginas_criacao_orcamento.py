@@ -7,7 +7,7 @@ from app import app
 def home():
     return render_template("index.html")
 
-@app.route("/criar-orcamento")
+@app.route("/criar-orcamento", methods=["GET", "POST"])
 def criar_orcamento():
     return render_template("criar_orcamento.html")
 
