@@ -11,21 +11,23 @@
 <body>
     <div class="dados-empresas">
         <div class="sua-empresa">
-            <p id="preview-empresa">Sua empresa</p>
-            <p id="preview-email">nathalidorio@gmail.com</p>
-            <p id="preview-site">www.seusite.com</p>
-            <p id="telefone-empresa">Tel: (19) 99999-8888</p>
+            <p id="preview-empresa">{{ nome_sua_empresa }}</p>
+            <p id="preview-email">{{ email_sua_empresa }}</p>
+            <p id="preview-site">{{ site_sua_empresa }}</p>
+            <p id="telefone-empresa">Tel: {{ telefone_sua_empresa }}</p>
         </div>
 
         <div class="empresa-cliente">
             <div class="cliente-p">
                 <p>Cliente:</p>
-                <p id="preview-cliente">João Pé de Feijão</p>
+                <p id="preview-cliente">{{ nome_cliente }}</p>
             </div>
-            <p id="telefone-cliente">Tel: (19) 99999-9999</p>
-            <p id="email-cliente">jaopefeijao@gmail.com</p>
-            <p id="data-hoje">Data: 20/04/2024</p>
-            <p id="validade">Validade: 05/05/2024</p>
+            <p id="telefone-cliente">Tel: {{ telefone_cliente }}</p>
+            <p id="email-cliente">{{ email_cliente }}</p>
+            <p id="data-hoje">Data: {{ data_hoje }}</p>
+            {% if inserir_validade == "sim" %}
+                <p id="validade">Validade: {{ data_validade }}</p>
+            {% endif %}
         </div>
     </div>
     <div class="orcamento">
@@ -41,16 +43,10 @@
             </thead>
             <tbody>
                 <tr>
-                <td>Produto A</td>
-                <td>2</td>
-                <td>R$ 50,00</td>
-                <td>R$ 100,00</td>
-                </tr>
-                <tr>
-                <td>Produto B</td>
-                <td>1</td>
-                <td>R$ 80,00</td>
-                <td>R$ 80,00</td>
+                    <td>{{ nome_servico_item }}</td>
+                    <td>{{ quantidade_item }}</td>
+                    <td>{{ valor_unitario }}</td>
+                    <td>{{ quantidade_item * valor_unitario }}</td> <!-- cuidado com esse calculo isso pode estar vindo como string e pode dar ruim precisa de conversão ou ja calcular no backend -->
                 </tr>
             </tbody>
         </table>
@@ -58,31 +54,31 @@
     <div class="descricao-valores">
         <div class="descricao-valores-filho1">
             <h2>Descrição/Observações</h2>
-            <p id="observacoes-adicionais">Descrição dos serviços ou produtos incluidos neste orçamento.Qualquer detalhe adicional pode ser informado aqui.</p>
+            <p id="observacoes-adicionais">{{ observacoes_adicionais }}</p>
         </div>
         <div class="descricao-valores-filho2">
             <div class="descricao-valores-p">
                 <p>Subtotal</p>
-                <p>R$180,00</p>
+                <p>PRECISO CALCULAR ISSO NO BACKEND</p>
             </div>
             <div class="descricao-valores-p">
                 <p>Desconto</p>
-                <p>R$ 0,00</p>
+                <p>{{ valor_desconto }}</p>
             </div>
             <div class="descricao-valores-p">
                 <p>Total</p>
-                <p id="total-tudo">R$ 180,00</p>
+                <p id="total-tudo">PRECISO CALCULAR ISSO NO BACKEND</p>
             </div>
         </div>
     </div>
     <div class="descricao-valores2">
         <div>
             <h2>Prazo de Entrega</h2>
-            <p><span class="material-symbols-outlined">timer</span>Até 7 dias úteis após a confirmação do pagamento.</p>
+            <p><span class="material-symbols-outlined">timer</span>{{ prazo_entrega }}</p>
         </div>
         <div>
             <h2>Condições de pagamento</h2>
-            <p><span class="material-symbols-outlined">payment_arrow_down</span>Pagamento á vista ou em até 3x sem juros.</p>
+            <p><span class="material-symbols-outlined">payment_arrow_down</span>{{ condicoes_pagamento }}</p>
         </div>
     </div>
     <footer>
