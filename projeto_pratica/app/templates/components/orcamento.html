@@ -25,7 +25,7 @@
             <p id="telefone-cliente">Tel: {{ telefone_cliente }}</p>
             <p id="email-cliente">{{ email_cliente }}</p>
             <p id="data-hoje">Data: {{ data_hoje }}</p>
-            {% if inserir_validade == "sim" %}
+            {% if inserir_validade == "Sim" %}
                 <p id="validade">Validade: {{ data_validade }}</p>
             {% endif %}
         </div>
@@ -46,7 +46,7 @@
                     <td>{{ nome_servico_item }}</td>
                     <td>{{ quantidade_item }}</td>
                     <td>{{ valor_unitario }}</td>
-                    <td>{{ quantidade_item * valor_unitario }}</td> <!-- cuidado com esse calculo isso pode estar vindo como string e pode dar ruim precisa de conversão ou ja calcular no backend -->
+                    <td>{{ subtotal }}</td> <!-- cuidado com esse calculo isso pode estar vindo como string e pode dar ruim precisa de conversão ou ja calcular no backend -->
                 </tr>
             </tbody>
         </table>
@@ -59,7 +59,7 @@
         <div class="descricao-valores-filho2">
             <div class="descricao-valores-p">
                 <p>Subtotal</p>
-                <p>PRECISO CALCULAR ISSO NO BACKEND</p>
+                <p>{{ subtotal }}</p>
             </div>
             <div class="descricao-valores-p">
                 <p>Desconto</p>
@@ -67,7 +67,7 @@
             </div>
             <div class="descricao-valores-p">
                 <p>Total</p>
-                <p id="total-tudo">PRECISO CALCULAR ISSO NO BACKEND</p>
+                <p id="total-tudo">{{ total }}</p>
             </div>
         </div>
     </div>
