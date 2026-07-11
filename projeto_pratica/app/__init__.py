@@ -8,4 +8,5 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-from routes import paginas_criacao_orcamento
+from app.routes import paginas_criacao_orcamento
+from app.models import *
