@@ -31,7 +31,7 @@
                     <p>Preencha as informações abaixo para gerar seu orçamento.</p>
                 </header>
                 
-                <form method="POST" action="/orcamento">
+                <form method="POST" action="/orcamento"> <!-- o método define como os dados são transmitidos ao servidor. //  O atributo action do <form> define para qual rota/endpoint os dados serão enviados.Exemplo: <form action="/login" method="POST"> → os dados vão para a rota /login do Flask, que deve estar configurada para aceitar POST.-->
                     <fieldset>
                         <legend id="info-orcamento">
                             <span class="material-symbols-outlined" aria-hidden="true">assignment_add</span>
@@ -155,7 +155,16 @@
                     <h1 id="previa-orcamento">Prévia do orçamento</h1>
                 </header>
                 <div class="preview-vazia" aria-hidden="true">
-                    <p id="meu-preview">Este espaço vai receber a visualização futura do orçamento.</p>
+                    <iframe 
+                        src="{{ url_for('orcamento') }}"
+                        width="600" 
+                        height="400" 
+                        name="meuIframe" 
+                        sandbox="allow-scripts allow-same-origin allowfullscreen" 
+                        allow="camera; microphone; geolocation" 
+                        loading="eager" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
             </section>
         </div>

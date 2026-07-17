@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const dataHoje = document.getElementById("data-hoje");
+    console.log("Arquivo JS carregado!");
 
     // Pega a data atual
     const hoje = new Date();
@@ -12,27 +12,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const dataFormatada = `${dia}/${mes}/${ano}`;
 
   // Atualiza o conteúdo do elemento
-    dataHoje.textContent = `Data: ${dataFormatada}`;
-    dataValidade.min = hoje;
-    dataValidade.max = "9999-12-31";
-
-    const suaEmpresa = document.getElementById("sua_empresa");
-    const email = document.getElementById("email");
-    const seuSite = document.getElementById("seu_site");
-    const telefoneSuaEmpresa = document.getElementById("telefone_sua_empresa");
-
-    // Campos do cliente
-    const nomeCliente = document.getElementById("nome_cliente");
-    const telefoneCliente = document.getElementById("telefone_cliente");
-    const emailCliente = document.getElementById("email_cliente");
-
-    // Validade
-    const inserirValidade = document.getElementById("inserir_validade");
-    const campoValidade = document.getElementById("campo-validade");
-    const dataValidade = document.getElementById("data_validade");
-
-    // Itens
-    const servicoItem = document.getElementById("servico_item");
+  
+  const suaEmpresa = document.getElementById("sua_empresa");
+  const email = document.getElementById("email");
+  const seuSite = document.getElementById("seu_site");
+  const telefoneSuaEmpresa = document.getElementById("telefone_sua_empresa");
+  
+  // Campos do cliente
+  const nomeCliente = document.getElementById("nome_cliente");
+  const telefoneCliente = document.getElementById("telefone_cliente");
+  const emailCliente = document.getElementById("email_cliente");
+  
+  // Validade
+  const inserirValidade = document.getElementById("inserir_validade");
+  const campoValidade = document.getElementById("campo-validade");
+  const dataValidade = document.getElementById("data_validade");
+  dataValidade.min = hoje;
+  dataValidade.max = "9999-12-31";
+  
+  // Itens
+  const servicoItem = document.getElementById("servico_item");
     const quantidade = document.getElementById("quantidade");
     const valor = document.getElementById("valor");
     const desconto = document.getElementById("desconto");
@@ -72,8 +71,14 @@ document.addEventListener('DOMContentLoaded', () => {
         previewEmpresa.textContent = campoEmpresa.value;
     }
 
-    campoEmpresa.addEventListener("input", function() {
-        pegarValorExibir
+
+
+
+    suaEmpresa.addEventListener("input", function() {
+        pegarValorExibir("sua_empresa", "preview_empresa");
     });
+
+    // proximo passo essa função precisa ser chamada para os outros campos, como email, telefone, etc.
     
+
 });
