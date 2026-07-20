@@ -71,14 +71,29 @@ document.addEventListener('DOMContentLoaded', () => {
         previewEmpresa.textContent = campoEmpresa.value;
     }
 
+    campos = [
+        ["sua_empresa", "preview_empresa"],
+        ["email", "preview_email"],
+        ["seu_site", "preview_site"],
+        ["telefone_sua_empresa", "preview_telefone"],
+        ["nome_cliente", "preview_nome_cliente"],
+        ["telefone_cliente", "preview_telefone_cliente"],
+        ["email_cliente", "preview_email_cliente"],
+        ["data_validade", "validade"],
+        ["servico_item", "preview_servico_item"],
+        ["quantidade", "preview_quantidade"],
+        ["valor", "preview_valor"],
+        ["desconto", "preview_desconto"],
+        ["observacoes", "observacoes_adicionais"],
+        ["prazo", "preview_prazo"],
+        ["condicoes_pagamento", "preview_condicoes_pagamento"]
+    ]
 
-
-
-    suaEmpresa.addEventListener("input", function() {
-        pegarValorExibir("sua_empresa", "preview_empresa");
+    campos.forEach(([campoDoInput, campoDoOrcamento]) => {
+        const input = document.getElementById(campoDoInput);
+        const preview = document.getElementById(campoDoOrcamento);
+        input.addEventListener("input", function() {
+            pegarValorExibir(campoDoInput, campoDoOrcamento);
+        });
     });
-
-    // proximo passo essa função precisa ser chamada para os outros campos, como email, telefone, etc.
-    
-
 });

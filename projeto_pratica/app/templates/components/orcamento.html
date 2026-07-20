@@ -43,10 +43,10 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>{{ nome_servico_item }}</td>
-                    <td>{{ quantidade_item }}</td>
-                    <td>{{ valor_unitario }}</td>
-                    <td>{{ subtotal }}</td> <!-- cuidado com esse calculo isso pode estar vindo como string e pode dar ruim precisa de conversão ou ja calcular no backend -->
+                    <td id="preview_servico_item">{{ nome_servico_item }}</td>
+                    <td id="preview_quantidade">{{ quantidade_item }}</td>
+                    <td id="preview_valor_unitario">{{ valor_unitario }}</td>
+                    <td id="preview_total">{{ subtotal }}</td> <!-- cuidado com esse calculo isso pode estar vindo como string e pode dar ruim precisa de conversão ou ja calcular no backend -->
                 </tr>
             </tbody>
         </table>
@@ -63,7 +63,7 @@
             </div>
             <div class="descricao-valores-p">
                 <p>Desconto</p>
-                <p>{{ valor_desconto }}</p>
+                <p id="preview_desconto">{{ valor_desconto }}</p>
             </div>
             <div class="descricao-valores-p">
                 <p>Total</p>
@@ -74,11 +74,11 @@
     <div class="descricao-valores2">
         <div>
             <h2>Prazo de Entrega</h2>
-            <p><span class="material-symbols-outlined">timer</span>{{ prazo_entrega }}</p>
+            <p id="preview_prazo"><span class="material-symbols-outlined">timer</span>{{ prazo_entrega }}</p>
         </div>
         <div>
             <h2>Condições de pagamento</h2>
-            <p><span class="material-symbols-outlined">payment_arrow_down</span>{{ condicoes_pagamento }}</p>
+            <p id="preview_condicoes_pagamento"><span class="material-symbols-outlined">payment_arrow_down</span>{{ condicoes_pagamento }}</p>
         </div>
     </div>
     <footer>

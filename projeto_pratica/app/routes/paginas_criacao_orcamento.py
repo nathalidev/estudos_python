@@ -15,31 +15,31 @@ def criar_orcamento():
 
 @app.route('/orcamento', methods=["GET", "POST"])
 def orcamento():
-    nome_sua_empresa = request.form.get("sua_empresa")
-    email_sua_empresa = request.form.get("email")
-    site_sua_empresa = request.form.get("seu_site")
-    telefone_sua_empresa = request.form.get("telefone_sua_empresa")
+    nome_sua_empresa = request.form.get("sua_empresa") if request.form.get("sua_empresa") != None else "Insira dados"
+    email_sua_empresa = request.form.get("email") if request.form.get("email") != None else "Insira dados"
+    site_sua_empresa = request.form.get("seu_site") if request.form.get("seu_site") != None else "Insira dados"
+    telefone_sua_empresa = request.form.get("telefone_sua_empresa") if request.form.get("telefone_sua_empresa") != None else "Insira dados"
 
-    nome_cliente = request.form.get("nome_cliente")
-    telefone_cliente = request.form.get("telefone_cliente")
-    email_cliente = request.form.get("email_cliente")
+    nome_cliente = request.form.get("nome_cliente") if request.form.get("nome_cliente") != None else "Insira dados"
+    telefone_cliente = request.form.get("telefone_cliente") if request.form.get("telefone_cliente") != None else "Insira dados"
+    email_cliente = request.form.get("email_cliente") if request.form.get("email_cliente") != None else "Insira dados"
 
     inserir_validade = request.form.get("inserir_validade")
     data_validade_ingles = request.form.get("data_validade")
-    data_validade = datetime.strptime(data_validade_ingles, "%Y-%m-%d").strftime("%d/%m/%Y") if data_validade_ingles else None
+    data_validade = datetime.strptime(data_validade_ingles, "%Y-%m-%d").strftime("%d/%m/%Y") if data_validade_ingles else "00/00/0000"
 
-    nome_servico_item = request.form.get("servico_item")
-    quantidade_item = int(request.form.get("quantidade"))
-    valor_unitario = float(request.form.get("valor"))
-    valor_desconto = float(request.form.get("desconto"))
+    nome_servico_item = request.form.get("servico_item") if request.form.get("servico_item") != None else "Insira dados"
+    quantidade_item = int(request.form.get("quantidade")) if request.form.get("quantidade") != None else 0.0
+    valor_unitario = float(request.form.get("valor")) if request.form.get("valor") != None else 0.0
+    valor_desconto = float(request.form.get("desconto")) if request.form.get("desconto") != None else 0.0
 
-    observacoes_adicionais = request.form.get("observacoes")
+    observacoes_adicionais = request.form.get("observacoes") if request.form.get("observacoes") != None else "Insira dados"
     prazo_entrega_ingles = request.form.get("prazo")
-    prazo_entrega = datetime.strptime(prazo_entrega_ingles, "%Y-%m-%d").strftime("%d/%m/%Y") if prazo_entrega_ingles else None
-    condicoes_pagamento = request.form.get("condicoes_pagamento")
+    prazo_entrega = datetime.strptime(prazo_entrega_ingles, "%Y-%m-%d").strftime("%d/%m/%Y") if prazo_entrega_ingles else "00/00/0000"
+    condicoes_pagamento = request.form.get("condicoes_pagamento") if request.form.get("condicoes_pagamento") != None else "Insira dados"
     data_hoje = datetime.now().strftime("%d/%m/%Y")
-    subtotal = quantidade_item * valor_unitario
-    total = subtotal - valor_desconto
+    subtotal = quantidade_item * valor_unitario if quantidade_item is not None and valor_unitario is not None else 0.0
+    total = subtotal - valor_desconto if subtotal is not None and valor_desconto is not None else 0.0
 
     context = {
         "nome_sua_empresa": nome_sua_empresa,
