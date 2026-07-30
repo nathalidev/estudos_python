@@ -158,6 +158,18 @@ table tbody tr:nth-child(even) {
     background-color: rgb(245, 247, 255);
 }
 
+th:nth-child(1),
+th:nth-child(2),
+th:nth-child(3){
+    border-right: 2px solid #ffffff;
+}
+
+td:nth-child(1),
+td:nth-child(2),
+td:nth-child(3){
+    border-right: 2px solid rgb(10, 35, 110);
+}
+
 /* ── Descrição + Totais ── */
 .descricao-valores {
     display: flex;

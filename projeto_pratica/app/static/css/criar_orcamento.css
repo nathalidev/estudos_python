@@ -17,7 +17,7 @@ footer{
 .orcamento-layout {
     display: flex;
     gap: 1.5rem;
-    align-items: stretch;
+    align-items: flex-start;
     align-content: stretch;
     width: 100%;
 }
@@ -55,8 +55,14 @@ footer{
     height: auto;  
 }
 
+#meuIframe {
+    width: 100%;
+    border: none;
+    display: block;
+}
+
 .preview-vazia {
-    flex: 1 1 auto;
+    flex: 0 0 auto;
     min-height: 0;
     width: 100%;
     border: 1px dashed rgba(10, 35, 110, 0.25);
@@ -64,6 +70,7 @@ footer{
     background: rgba(255, 255, 255, 0.45);
     padding: 1rem;
     height: auto;
+    overflow: visible;
 }
 
 .conteudo-main fieldset {

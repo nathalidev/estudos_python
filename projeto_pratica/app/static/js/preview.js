@@ -96,4 +96,17 @@ document.addEventListener('DOMContentLoaded', () => {
             pegarValorExibir(campoDoInput, campoDoOrcamento);
         });
     });
+
+    const iframe = document.getElementById("meuIframe");
+
+    iframe.addEventListener("load", () => {
+        const doc = iframe.contentDocument;
+
+        function ajustarAltura() {
+            iframe.style.height =
+                doc.documentElement.scrollHeight + "px";
+        }
+
+        ajustarAltura();
+    });
 });

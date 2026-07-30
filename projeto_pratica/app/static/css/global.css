@@ -46,7 +46,7 @@ nav {
 }
 
 .preview-vazia{
-    height: 100%;
+    height: auto;
 }
 
 .ul-navbar {
