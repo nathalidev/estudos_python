@@ -65,48 +65,61 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function pegarValorExibir(campoDoInput, campoDoOrcamento) {
+    function pegarValorExibir(campoDoInput, campoDoOrcamento, doc) {
         const campoEmpresa = document.getElementById(campoDoInput);
-        const previewEmpresa = document.getElementById(campoDoOrcamento);
+        const previewEmpresa = doc.getElementById(campoDoOrcamento);
         previewEmpresa.textContent = campoEmpresa.value;
     }
 
-    campos = [
+    const campos = [
         ["sua_empresa", "preview_empresa"],
         ["email", "preview_email"],
         ["seu_site", "preview_site"],
-        ["telefone_sua_empresa", "preview_telefone"],
-        ["nome_cliente", "preview_nome_cliente"],
-        ["telefone_cliente", "preview_telefone_cliente"],
-        ["email_cliente", "preview_email_cliente"],
+        ["telefone_sua_empresa", "telefone_empresa"],
+
+        ["nome_cliente", "preview-cliente"],
+        ["telefone_cliente", "telefone-cliente"],
+        ["email_cliente", "email-cliente"],
+
         ["data_validade", "validade"],
+
         ["servico_item", "preview_servico_item"],
         ["quantidade", "preview_quantidade"],
-        ["valor", "preview_valor"],
+        ["valor", "preview_valor_unitario"],
+
         ["desconto", "preview_desconto"],
-        ["observacoes", "observacoes_adicionais"],
+        ["observacoes", "observacoes-adicionais"],
+
         ["prazo", "preview_prazo"],
         ["condicoes_pagamento", "preview_condicoes_pagamento"]
-    ]
+    ];
 
-    campos.forEach(([campoDoInput, campoDoOrcamento]) => {
-        const input = document.getElementById(campoDoInput);
-        const preview = document.getElementById(campoDoOrcamento);
-        input.addEventListener("input", function() {
-            pegarValorExibir(campoDoInput, campoDoOrcamento);
-        });
-    });
-
+    
     const iframe = document.getElementById("meuIframe");
-
+    
     iframe.addEventListener("load", () => {
         const doc = iframe.contentDocument;
-
+        
         function ajustarAltura() {
             iframe.style.height =
-                doc.documentElement.scrollHeight + "px";
+            doc.documentElement.scrollHeight + "px";
         }
-
+        
         ajustarAltura();
+        campos.forEach(([campoDoInput, campoDoOrcamento]) => {
+            const input = document.getElementById(campoDoInput);
+            const preview = doc.getElementById(campoDoOrcamento);
+
+            if (!input || !preview) {
+                console.warn(
+                    `Campo não encontrado: ${campoInput} -> ${campoPreview}`
+                );
+                return;
+            }
+            
+            input.addEventListener("input", function() {
+                pegarValorExibir(campoDoInput, campoDoOrcamento, doc);
+            });
+        });
     });
 });
