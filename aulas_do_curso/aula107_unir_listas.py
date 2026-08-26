@@ -17,3 +17,6 @@ def zipper(cidades: list , siglas: list):
     print(lista_final)
 
 zipper(['Salvador', 'Ubatuba', 'Belo Horizonte'], ['BA', 'SP', 'MG', 'RJ'])
+
+# zip() pega elementos de várias sequências (listas, tuplas, etc.) e os agrupa em tuplas.
+# Ele para no menor iterável, evitando erros de índice.
