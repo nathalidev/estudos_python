@@ -1,43 +1,34 @@
-def nao_sei(lista)-> list:
-    contador = 1
-    contador_repetidos = 0
-    contador_tamanho = 0
-    troca_termo1 = False
-    if troca_termo1 == False:
-        for termo1 in lista:
-            contador_tamanho +=1
-            for termo2 in lista[contador::]:
-                if termo1 > termo2:
-                    lista[contador] = termo1
-                    lista[(contador-1)] = termo2
-                    contador+=1
-                elif termo1 == termo2:
-                    contador_repetidos +=1
-                    lista[-1] = termo2
-                    contador+=1
-                    continue
-                else:
-                    lista[contador] = termo2
-                    lista[(contador-1)] = termo1
-                    troca_termo1 = True
-    else:
-        troca_termo1 = False
-        for termo1 in lista[contador::]:
-            for termo2 in lista[contador::]:
-                if termo1 > termo2:
-                    lista[contador] = termo1
-                    lista[(contador-1)] = termo2
-                    contador+=1
-                elif termo1 == termo2:
-                    contador_repetidos +=1
-                    lista[-1] = termo2
-                    contador+=1
-                    continue
-                else:
-                    lista[contador] = termo2
-                    lista[(contador-1)] = termo1
-                    troca_termo1 = True
-    tamanho_final = contador_tamanho-contador_repetidos
-    return lista[:tamanho_final:]
+# Exercício Hardcore de Lógica:
+# Objetivo: implementar manualmente uma função que receba uma lista de números inteiros,
+#           remova os elementos duplicados e ordene os valores em ordem crescente,
+#           retornando uma nova lista como resultado.
+#
+# Regras:
+# - Não usar funções prontas como set(), sorted(), len(), min(), max(), append(), remove(), pop(), insert().
+# - Todo o controle deve ser feito manualmente com loops, comparações e manipulação direta de índices.
+# - O algoritmo deve funcionar para listas de qualquer tamanho.
+#
+# Exemplo:
+# Entrada: [5, 2, 9, 1, 5, 6, 2]
+# Saída:   [1, 2, 5, 6, 9]
 
-print(nao_sei([5, 2, 9, 1, 5, 6, 2]))
+def retirar_repetidos(lista):
+    inicio_lista_a_comparar = 1
+    indice_lista_repetidos = 0
+    lista_repetidos = [0]
+    delimitador_lista_repetidos = 1
+    for termo in lista:
+        if termo in lista_repetidos:
+            continue
+        else:
+            for termo_comparacao in lista[inicio_lista_a_comparar::]:
+                inicio_lista_a_comparar +=1
+                if termo == termo_comparacao:
+                    tem_repetido = True
+                    if tem_repetido:
+                        delimitador_lista_repetidos +=1
+                        lista_repetidos = lista_repetidos * delimitador_lista_repetidos
+                        lista_repetidos[indice_lista_repetidos] = termo
+    return lista_repetidos
+
+print(retirar_repetidos([5, 2, 9, 1, 5, 6, 2]))
