@@ -17,6 +17,7 @@ def retirar_repetidos(lista):
     indice_lista_repetidos = 0
     lista_repetidos = [0]
     delimitador_lista_repetidos = 1
+    contador_passagem = 0
     for termo in lista:
         if termo in lista_repetidos:
             continue
@@ -24,11 +25,11 @@ def retirar_repetidos(lista):
             for termo_comparacao in lista[inicio_lista_a_comparar::]:
                 inicio_lista_a_comparar +=1
                 if termo == termo_comparacao:
-                    tem_repetido = True
-                    if tem_repetido:
-                        delimitador_lista_repetidos +=1
-                        lista_repetidos = lista_repetidos * delimitador_lista_repetidos
-                        lista_repetidos[indice_lista_repetidos] = termo
+                    lista_repetidos = lista_repetidos * delimitador_lista_repetidos
+                    delimitador_lista_repetidos +=1
+                    lista_repetidos[indice_lista_repetidos] = termo
+                    indice_lista_repetidos +=1
+            
     return lista_repetidos
 
 print(retirar_repetidos([5, 2, 9, 1, 5, 6, 2]))
