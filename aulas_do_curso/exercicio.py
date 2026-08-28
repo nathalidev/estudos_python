@@ -35,7 +35,7 @@ def retirar_repetidos(lista, tamanho_total):
                     lista_repetidos = lista_repetidos * delimitador_lista_repetidos
                     lista_repetidos[indice_lista_repetidos] = termo
                     indice_lista_repetidos +=1
-                elif termo_comparacao == lista[-1] and (contador_comparacao == (tamanho_total-1)):
+                elif termo_comparacao == lista[-1] and (contador_comparacao == (tamanho_total-1)): # o problema é que aqui contador_comparacao vai sendo cada vez menor conforme eu vou avançando pelo termos_comparacao
                     inicio_lista_a_comparar +=1
                     contador_comparacao = 0
                     break
