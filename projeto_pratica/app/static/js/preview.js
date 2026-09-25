@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function exibirValidade(){
         const campoValidade = document.getElementById('campo-validade');
-        const opcoesValidade = document.querySelectorAll('input[name="validade"]');
+        const opcoesValidade = document.querySelectorAll('input[name="inserir_validade"]');
 
         opcoesValidade.forEach(radio => {
             radio.addEventListener('change', function() {
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!input || !preview) {
                 console.warn(
-                    `Campo não encontrado: ${campoInput} -> ${campoPreview}`
+                    `Campo não encontrado: ${campoDoInput} -> ${campoDoOrcamento}`
                 );
                 return;
             }

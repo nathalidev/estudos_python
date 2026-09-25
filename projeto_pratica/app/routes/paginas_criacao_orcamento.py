@@ -2,6 +2,7 @@ from flask import render_template, request #função do flask para renderizaçã
 from flask import jsonify # função para retorno de dados em json pro front usar
 from flask import redirect, url_for #joga o usuário pra url em questão
 from app import app
+from decimal import Decimal
 
 from datetime import datetime
 
@@ -30,8 +31,8 @@ def orcamento():
 
     nome_servico_item = request.form.get("servico_item") if request.form.get("servico_item") != None else "Insira dados"
     quantidade_item = int(request.form.get("quantidade")) if request.form.get("quantidade") != None else 0.0
-    valor_unitario = float(request.form.get("valor")) if request.form.get("valor") != None else 0.0
-    valor_desconto = float(request.form.get("desconto")) if request.form.get("desconto") != None else 0.0
+    valor_unitario = Decimal(request.form.get("valor")) if request.form.get("valor") != None else 0.0
+    valor_desconto = Decimal(request.form.get("desconto")) if request.form.get("desconto") != None else 0.0
 
     observacoes_adicionais = request.form.get("observacoes") if request.form.get("observacoes") != None else "Insira dados"
     prazo_entrega_ingles = request.form.get("prazo")
