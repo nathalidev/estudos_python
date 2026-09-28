@@ -139,12 +139,12 @@ footer{
     background: rgba(204, 204, 204, 0.8);
 }
 
-.conteudo-main button[type='submit'] {
+.conteudo-main button[type='submit'], #adicionar-item {
     background: rgb(10, 35, 110);
     color: rgb(255, 255, 255);
 }
 
-.conteudo-main button[type='submit']:active {
+.conteudo-main button[type='submit']:active, #adicionar-item:active {
     background: rgb(3, 18, 63);
 }
 
