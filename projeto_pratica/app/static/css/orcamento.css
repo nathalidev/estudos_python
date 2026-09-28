@@ -160,13 +160,15 @@ table tbody tr:nth-child(even) {
 
 th:nth-child(1),
 th:nth-child(2),
-th:nth-child(3){
+th:nth-child(3),
+th:nth-child(4){
     border-right: 2px solid #ffffff;
 }
 
 td:nth-child(1),
 td:nth-child(2),
-td:nth-child(3){
+td:nth-child(3),
+td:nth-child(4){
     border-right: 2px solid rgb(10, 35, 110);
 }
 
@@ -281,6 +283,16 @@ td:nth-child(3){
     font-size: 20px !important;
     color: rgb(24, 67, 185);
     flex-shrink: 0;
+}
+
+.botao-editar {
+    background: rgb(10, 35, 110);
+    color: rgb(255, 255, 255);
+    border-radius: 8px;
+}
+
+.botao-editar:active {
+    background: rgb(3, 18, 63);
 }
 
 /* ── Footer ── */

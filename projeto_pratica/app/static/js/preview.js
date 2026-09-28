@@ -50,18 +50,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const regex = /^[A-Za-zÀ-ÿ\s]+$/;
 
-    function exibirValidade(){
-        const campoValidade = document.getElementById('campo-validade');
-        const opcoesValidade = document.querySelectorAll('input[name="inserir_validade"]');
-
-        opcoesValidade.forEach(radio => {
-            radio.addEventListener('change', function() {
+    function exibirValidade() {
+        inserirValidade.addEventListener("change", function () {
             if (this.value === "sim") {
-                campoValidade.style.display = "block"; // mostra o campo
+                campoValidade.style.display = "block";
             } else {
-                campoValidade.style.display = "none";  // esconde o campo
+                campoValidade.style.display = "none";
             }
-            });
         });
     }
 
@@ -83,29 +78,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ["data_validade", "validade"],
 
-        ["servico_item", "preview_servico_item"],
-        ["quantidade", "preview_quantidade"],
-        ["valor", "preview_valor_unitario"],
-
-        ["desconto", "preview_desconto"],
         ["observacoes", "observacoes-adicionais"],
-
         ["prazo", "preview_prazo"],
         ["condicoes_pagamento", "preview_condicoes_pagamento"]
     ];
 
     
     const iframe = document.getElementById("meuIframe");
-    
-    iframe.addEventListener("load", () => {
+
+    function iniciarPreview() {
         const doc = iframe.contentDocument;
-        
-        function ajustarAltura() {
-            iframe.style.height =
-            doc.documentElement.scrollHeight + "px";
+
+        if (!doc) {
+            console.error("Não foi possível acessar o documento do iframe.");
+            return;
         }
-        
+
+        function ajustarAltura() {
+            iframe.style.height = doc.documentElement.scrollHeight + "px";
+        }
+
         ajustarAltura();
+
         campos.forEach(([campoDoInput, campoDoOrcamento]) => {
             const input = document.getElementById(campoDoInput);
             const preview = doc.getElementById(campoDoOrcamento);
@@ -116,10 +110,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 );
                 return;
             }
-            
-            input.addEventListener("input", function() {
-                pegarValorExibir(campoDoInput, campoDoOrcamento, doc);
+
+            input.addEventListener("input", () => {
+                preview.textContent = input.value;
+                ajustarAltura();
             });
         });
-    });
+    }
+
+    iframe.addEventListener("load", iniciarPreview);
+
+    if (iframe.contentDocument.readyState === "complete") {
+        iniciarPreview();
+    }
 });

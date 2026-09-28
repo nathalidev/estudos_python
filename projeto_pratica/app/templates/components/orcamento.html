@@ -25,7 +25,7 @@
             <p id="telefone-cliente">Tel: {{ telefone_cliente }}</p>
             <p id="email-cliente">{{ email_cliente }}</p>
             <p id="data-hoje">Data: {{ data_hoje }}</p>
-            {% if inserir_validade == "Sim" %}
+            {% if inserir_validade == "sim" %}
                 <p id="validade">Validade: {{ data_validade }}</p>
             {% endif %}
         </div>
@@ -39,15 +39,10 @@
                 <th>Quantidade</th>
                 <th>Valor Unitário</th>
                 <th>Total</th>
+                <th>Ações</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td id="preview_servico_item">{{ nome_servico_item }}</td>
-                    <td id="preview_quantidade">{{ quantidade_item }}</td>
-                    <td id="preview_valor_unitario">{{ valor_unitario }}</td>
-                    <td id="preview_total">{{ subtotal }}</td> <!-- cuidado com esse calculo isso pode estar vindo como string e pode dar ruim precisa de conversão ou ja calcular no backend -->
-                </tr>
+            <tbody id="lista-itens">
             </tbody>
         </table>
     </div>
