@@ -73,6 +73,10 @@ footer{
     overflow: visible;
 }
 
+.header-texto {
+    min-height: 6.5rem;
+}
+
 .conteudo-main fieldset {
     border: 1px solid rgba(10, 35, 110, 0.25);
     border-radius: 10px;
@@ -195,7 +199,7 @@ footer{
 
     .header-texto {
         gap: 0.35rem;
-        height: auto;
+        min-height: 4.5rem;
     }
 
     form{

@@ -69,3 +69,7 @@ def orcamento():
     }
 
     return render_template('components/orcamento.html', **context)
+
+@app.route("/contato")
+def contato():
+    return render_template("contato.html")
