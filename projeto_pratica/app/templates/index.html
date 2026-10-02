@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
         <ul class="ul-navbar">
             <img class="logo-sistema" src="{{ url_for('static', filename='images/logo_app.png') }}" alt="Logo do sistema">
             <li><a href="{{ url_for('criar_orcamento') }}">Criar orçamento</a></li>
-            <li><a href="#">Sobre</a></li>
+                <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
             <li><a href="{{ url_for('contato') }}">Contato</a></li>
         </ul>
     </nav>

@@ -1,14 +1,14 @@
-.contato-page {
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-}
-
 .contato-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.25rem;
   width: min(100%, 960px);
+}
+.conteudo-main {
+  padding: 3%;
+}
+.conteudo-main form {
+  align-self: stretch;
 }
 
 .contato-card {

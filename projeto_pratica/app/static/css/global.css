@@ -59,6 +59,7 @@ nav {
     var(--cor-principal) 100%
   );
   box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
 }
 
 .ul-navbar {
@@ -117,7 +118,7 @@ main {
   gap: 2.25rem;
   box-sizing: border-box;
   width: 100%;
-  font-size: clamp(0.375rem, 1vw, 1.875rem);
+  font-size: clamp(0.375rem, 3vw, 1.2rem);
 }
 
 footer {
@@ -139,10 +140,10 @@ footer {
     margin-right: 0;
     z-index: 100;
     background: linear-gradient(
-      90deg,
-      rgb(255, 255, 255) 0%,
-      rgb(188, 197, 221) 60%,
-      rgb(10, 35, 110) 100%
+        90deg,
+        #ffffff 30%,
+        #aab3c7 80%,
+        #899fd3 90%
     );
   }
 

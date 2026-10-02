@@ -73,3 +73,7 @@ def orcamento():
 @app.route("/contato")
 def contato():
     return render_template("contato.html")
+
+@app.route("/sobre")
+def sobre():
+    return render_template("sobre.html")

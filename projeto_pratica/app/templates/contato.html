@@ -24,14 +24,12 @@
 	referrerpolicy="no-referrer"
 	/>
 </head>
-<body class="contato-page">
+<body>
 	<nav aria-label="Navegação principal">
         <ul class="ul-navbar">
-            <li>
-                <img class="logo-sistema" src="{{ url_for('static', filename='images/logo_app.png') }}" alt="Logo do sistema">
-            </li>
+            <img class="logo-sistema" src="{{ url_for('static', filename='images/logo_app.png') }}" alt="Logo do sistema">
             <li><a href="{{ url_for('home') }}"><strong>Home</strong></a></li>
-            <li><a href="#"><strong>Sobre</strong></a></li>
+            <li><a href="{{ url_for('sobre') }}"><strong>Sobre</strong></a></li>
             <li><a href="{{ url_for('criar_orcamento') }}"><strong>Criar orçamento</a></strong></li>
         </ul>
     </nav>
@@ -60,6 +58,11 @@
 					<input type="tel" id="telefone" name="telefone" />
 				</div>
 
+                <div>
+					<label for="assunto">Assunto</label>
+					<input type="text" id="assunto" name="assunto" />
+				</div>
+
 				<div>
 					<label for="mensagem">Mensagem</label>
 					<textarea id="mensagem" name="mensagem" rows="4" required></textarea>
@@ -69,7 +72,8 @@
 			</fieldset>
 
 		</form>
-	<main class="contato-grid" aria-label="Opções de contato">
+    </section>
+	<section class="contato-grid" aria-label="Opções de contato">
 	<div class="contato-card">
 		<a
 		class="contato-link"
@@ -111,6 +115,6 @@
 		<span>Acessar LinkedIn</span>
 		</a>
 	</div>
-	</main>
+	</section>
 </body>
 </html>

@@ -1,9 +1,5 @@
 body {
-    flex-wrap: nowwrap;
-}
-
-nav {
-    flex-shrink: 0; /* impede a nav de encolher */
+    flex-wrap: nowrap;
 }
 
 .secao-beneficios {
