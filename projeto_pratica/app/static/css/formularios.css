@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: min(100%, 760px);
+  margin: 0 auto;
   background: rgba(255, 255, 255, 0.75);
   border: 1px solid rgba(10, 35, 110, 0.2);
   border-radius: 12px;
@@ -87,6 +89,10 @@
 .conteudo-main button[type="submit"]:active,
 #adicionar-item:active {
   background: rgb(3, 18, 63);
+}
+
+#form-contato{
+    width: 70%;
 }
 
 @media (max-width: 425px) {

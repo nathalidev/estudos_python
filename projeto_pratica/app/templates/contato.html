@@ -33,88 +33,93 @@
             <li><a href="{{ url_for('criar_orcamento') }}"><strong>Criar orçamento</a></strong></li>
         </ul>
     </nav>
-	<section class="conteudo-main" aria-labelledby="info-orcamento">
-		<header class="header-texto">
-			<h1>Deixe sua mensagem!</h1>
-		</header>
-		<form method="POST" action="/contato">
-			<fieldset>
-				<legend id="info-orcamento">
-					Informações de Contato
-				</legend>
+	<main>
+		<section class="conteudo-main" aria-labelledby="info-orcamento">
+			<header class="header-texto">
+				<h1>Deixe sua mensagem!</h1>
+			</header>
+			<form  method="POST" action="/contato" id="form-contato">
+				<fieldset>
+					<legend id="info-orcamento">
+						Informações de Contato
+					</legend>
 
-				<div>
-					<label for="nome">Nome</label>
-					<input type="text" id="nome" name="nome" required />
-				</div>
+					<div>
+						<label for="nome">Nome</label>
+						<input type="text" id="nome" name="nome" required />
+					</div>
 
-				<div>
-					<label for="email">E-mail</label>
-					<input type="email" id="email" name="email" required />
-				</div>
+					<div>
+						<label for="email">E-mail</label>
+						<input type="email" id="email" name="email" required />
+					</div>
 
-				<div>
-					<label for="telefone">Telefone</label>
-					<input type="tel" id="telefone" name="telefone" />
-				</div>
+					<div>
+						<label for="telefone">Telefone</label>
+						<input type="tel" id="telefone" name="telefone" />
+					</div>
 
-                <div>
-					<label for="assunto">Assunto</label>
-					<input type="text" id="assunto" name="assunto" />
-				</div>
+					<div>
+						<label for="assunto">Assunto</label>
+						<input type="text" id="assunto" name="assunto" />
+					</div>
 
-				<div>
-					<label for="mensagem">Mensagem</label>
-					<textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-				</div>
+					<div>
+						<label for="mensagem">Mensagem</label>
+						<textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+					</div>
 
-				<button type="submit">Enviar</button>
-			</fieldset>
+					<button type="submit">Enviar</button>
+				</fieldset>
 
-		</form>
-    </section>
-	<section class="contato-grid" aria-label="Opções de contato">
-	<div class="contato-card">
-		<a
-		class="contato-link"
-		href="https://wa.me/5519989473312"
-		target="_blank"
-		rel="noopener noreferrer"
-		>
-		<img
-			src="{{ url_for('static', filename='images/whats.svg') }}"
-			id="whats_icone"
-			alt="Ícone do WhatsApp"
-		/>
-		<span>Entrar em contato</span>
-		</a>
-	</div>
-	<div class="contato-card">
-		<a
-		class="contato-link"
-		href="mailto:nathalidorio@gmail.com"
-		target="_blank"
-		rel="noopener noreferrer"
-		>
-		<span class="icone">✉️</span>
-		<span>Enviar e-mail</span>
-		</a>
-	</div>
-	<div class="contato-card">
-		<a
-		class="contato-link"
-		href="https://www.linkedin.com/in/nathã-lidório-7a68a32a4"
-		target="_blank"
-		rel="noopener noreferrer"
-		>
-		<img
-			src="{{ url_for('static', filename='images/linkedin.png') }}"
-			id="linkedin"
-			alt="Ícone do LinkedIn"
-		/>
-		<span>Acessar LinkedIn</span>
-		</a>
-	</div>
-	</section>
+			</form>
+		</section>
+		<section class="contato-grid" aria-label="Opções de contato">
+			<div class="contato-card">
+				<a
+					class="contato-link"
+					href="https://wa.me/5519989473312"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<img
+						src="{{ url_for('static', filename='images/whats.svg') }}"
+						id="whats_icone"
+						alt="Ícone do WhatsApp"
+					/>
+					<span>Entrar em contato</span>
+				</a>
+			</div>
+			<div class="contato-card">
+				<a
+					class="contato-link"
+					href="mailto:nathalidorio@gmail.com"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<span class="icone">✉️</span>
+					<span>Enviar e-mail</span>
+				</a>
+			</div>
+			<div class="contato-card">
+				<a
+					class="contato-link"
+					href="https://www.linkedin.com/in/nathã-lidório-7a68a32a4"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<img
+						src="{{ url_for('static', filename='images/linkedin.png') }}"
+						id="linkedin"
+						alt="Ícone do LinkedIn"
+					/>
+					<span>Acessar LinkedIn</span>
+				</a>
+			</div>
+		</section>
+	</main>
+    <footer>
+        <p>© 2026 Orçamento Rápido</p>
+    </footer>
 </body>
 </html>
