@@ -71,9 +71,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .conteudo-main {
-    font-size: clamp(0.375rem, 3vw, 1.875rem);
-  }
 
   body {
     flex-direction: column;
@@ -150,6 +147,22 @@ footer {
 
   .preview-vazia {
     min-height: 12rem;
+  }
+
+  .header-texto h1, #previa-orcamento h1 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .header-texto p {
+    font-size: clamp(0.75rem, 4vw, 1.25rem);
+  }
+
+  .header-texto form{
+    font-size: clamp(0.75rem, 4vw, 1.25rem);
+  }
+
+  .preview-orcamento{
+    margin-top: 8rem;
   }
 
   footer {
