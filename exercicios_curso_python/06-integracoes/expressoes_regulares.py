@@ -53,6 +53,24 @@ import re
 # Os colchetes [] criam uma lista personalizada de caracteres permitidos (chamada de classe de caracteres).
 # Ele funciona como um operador OU exclusivo para caracteres individuais. Por exemplo, [aeiou] significa "a, ou e, ou i, ou o, ou u".
 
+# O metacaractere {} é o quantificador ele define o número exato ou intervalo de repetições. Por exemplo {4} significa "exatamente quatro vezes", {2,4} significa "entre duas e quatro vezes" e {2,} significa "duas ou mais vezes".
+
+# O metacaractere ^ (circunflexo) é usado para indicar que o padrão deve casar apenas no início da string. Por exemplo, ^Olá significa "Olá" no início da string.
+
+# O metacaractere $ (cifrão) é usado para indicar que o padrão deve casar apenas no final da string. Por exemplo, mundo$ significa "mundo" no final da string.
+
+# A principal diferença entre () (parênteses) e [] (colchetes) é que os parênteses buscam uma sequência exata ou grupo, enquanto os colchetes buscam qualquer um dos caracteres listados dentro deles. No re.findall, por exemplo, [aeiou] vai casar com qualquer vogal, enquanto (aeiou) vai casar apenas com a sequência "aeiou" exatamente como está.
+
+# O metacaractere \ (barra invertida) é usado para escapar caracteres especiais, permitindo que você os trate como texto literal. Por exemplo, se você quiser buscar um ponto final (.) em uma string, você precisa usar \. no regex, caso contrário, o ponto seria interpretado como um curinga.
+
+# O metacaractere \b é usado para indicar uma fronteira de palavra, ou seja, ele casa com a posição entre um caractere de palavra (letra, número ou sublinhado) e um caractere que não seja de palavra (como espaço ou pontuação). Por exemplo, \bpalavra\b vai casar apenas com a palavra "palavra" isolada, e não com "palavras" ou "minhapalavra".
+
+# O metacaractere \d é usado para indicar qualquer dígito (0-9). Ele é equivalente a [0-9]. Por exemplo, \d{3} vai casar com exatamente três dígitos consecutivos.
+
+# O metacaractere ? é usado para indicar que o elemento anterior é opcional, ou seja, ele pode aparecer zero ou uma vez. Por exemplo, colou?r vai casar com "color" e "colour".
+
+# Os quantificadores são greedy (gananciosos) por padrão exatamente porque o motor de regex foi projetado para tentar consumir o maior trecho contínuo de texto possível antes de entregar um resultado.
+
 # O range (intervalo) dentro dos colchetes [] funciona usando o hífen - para definir uma sequência contínua de caracteres.
 
 # Em vez de você precisar escrever [0123456789], você escreve apenas [0-9] e o regex entende que deve aceitar qualquer caractere que esteja entre o 0 e o 9 nessa tabela.
