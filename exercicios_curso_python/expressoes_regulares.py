@@ -70,14 +70,23 @@ Quando recorre a um tratamento experimental para recuperar sua aparência, ele a
 
 Como Clayface, Matt deixa de ser um homem em busca de recuperação e se transforma em alguém consumido pela dor, pelo ressentimento e pela necessidade de vingança. Sua tragédia não está apenas na mutação física, mas na perda completa de sua identidade. O ator que queria ser amado e reconhecido torna-se um monstro que acredita que a humanidade o traiu primeiro.'''
 
-print(re.search(r'Matt', texto))
-print(texto[88:92])
-print(re.findall(r'Matt', texto))
-personagem = re.compile(r'Matt')
-print(personagem.search(texto))
-print(re.findall(r'clayface', texto, flags=re.IGNORECASE))
-print(re.findall(r'clayface|matt', texto,flags=re.IGNORECASE))
-print(re.sub(r'Matt', 'BATMAN', texto))
-print(re.sub(r'Matt|Clayface', '[VILÃO]', texto))
-print(re.findall(r'\b[A-Z][a-zA-ZÀ-ÿ]*', texto))
-print(re.findall(r'[0-9]+', texto))
+print(f"Aqui é exibido a primeira ocorrência de certa palavra mostrando a posição de inicio da ocorrência da palavra e sua posição final:\n{re.search(r'Matt', texto)}")
+
+print(f"\nAqui levando em consideração a posição inicial de final da 1° ocorrência da palavra a ser buscada eu obtenho ela usando o fatiamento:\n{texto[88:92]}")
+print(f"\nAqui podemos ver a palavra buscada pelo n° de vezes que ela aparece na string:\n{re.findall(r'Matt', texto)}")
+
+personagem = re.compile(r'Matt') #regex ja pronto pra reutilização, boa prática ja fazer isso pra ele ficar compilado
+
+print(f"Exibindo a primeira ocorrência da palavra a ser buscada porém  via compile dentro de variavel: \n{personagem.search(texto)}")
+
+print(f"Todos os 'clayface' do texto independente de ser minusculo ou maiusculo:\n{re.findall(r'clayface', texto, flags=re.IGNORECASE)}")
+
+print(f"Todos os 'clayface' ou 'matt' do texto independente de ser minusculo ou maiusculo:\n{re.findall(r'clayface|matt', texto,flags=re.IGNORECASE)}")
+
+print(f"Imprimindo o texto substituindo 'Matt' por 'BATMAN':\n{re.sub(r'Matt', 'BATMAN', texto)}")
+
+print(f"Imprimindo o texto substituindo 'Matt' ou 'Clayface' por '[VILÃO]':\n{re.sub(r'Matt|Clayface', '[VILÃO]', texto)}")
+
+print(f"Pegando toda palavra do texto que começa com maiúscula e o resto minúscula:\n{re.findall(r'\b[A-Z][a-zA-ZÀ-ÿ]*', texto)}")
+
+print(f"Pegando todo n° do texto:\n{re.findall(r'[0-9]+', texto)}")
